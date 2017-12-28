@@ -4,7 +4,7 @@ layout: default
 
 # E1006I - Introduction to Computing for Engineers and Computer Scientists
 
-This git
+This GitHub repository supports 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](index2).
