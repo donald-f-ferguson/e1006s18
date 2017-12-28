@@ -2,8 +2,9 @@
 layout: default
 ---
 
-# Introduction to Computing for Engineers and Computer Scientists
+# E1006I - Introduction to Computing for Engineers and Computer Scientists
 
+This git
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](index2).
