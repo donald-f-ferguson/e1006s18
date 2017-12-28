@@ -2,6 +2,8 @@
 layout: default
 ---
 
+# Introduction to Computing for Engineers and Computer Scientists
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](another-page).

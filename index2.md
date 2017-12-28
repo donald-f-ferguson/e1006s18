@@ -4,6 +4,7 @@ layout: default
 
 # E1006 - Introduction to Computing for Engineers and Applied Scientists
 
+test test test te
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
