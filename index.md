@@ -4,7 +4,9 @@ layout: default
 
 # E1006I - Introduction to Computing for Engineers and Computer Scientists
 
-This GitHub repository supports
+This GitHub repository supports the Dept. of Computer Science, Columbia University course
+E1008 - Introduction to Computing for Engineers and Applied Scientists.
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](index2).
