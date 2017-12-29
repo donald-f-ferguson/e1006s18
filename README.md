@@ -1,3 +1,3 @@
-# e1006s18
+# ENGI E1006 - Introduction to Computing for Engineers and Applied Scientists
 
-Test
+Test2
