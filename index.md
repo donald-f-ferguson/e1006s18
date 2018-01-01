@@ -8,7 +8,7 @@ This GitHub repository supports the Dept. of Computer Science, Columbia Universi
 _E1008 - Introduction to Computing for Engineers and Applied Scientists_. The current content is for
 the Spring 2018 semester.
 
-# Overview
+## Overview
 
 This course will teach you Python programming, but is not only a course on writing programs and
 and learning the Python
@@ -29,141 +29,33 @@ starting foundation for future courses and your career, which will rely heavily 
 _Computing Outcomes?_ "Gee, can you vague that up for me?"
 ([Buffy the Vampire Slayer, season 1, episode 1 - "Welcome to the Hellmouth."](https://en.wikipedia.org/wiki/Welcome_to_the_Hellmouth) My girlfriend
 tells me that a quote from Buffy helps clarify anything).
-We will use Python and basic principles of Computer Science to incrementally build
-four simple solutions:
-- An interactive, database driven web application.
-- Numerical simulation to predict a system's behavior given initial conditions.
-- Data analytics and insight.
-- Machine learning.
+We will use Python and basic principles of Computer Science to incrementally build simple solutions in
+four areas:
+1. An interactive, database driven web application.
+1. Numerical simulation to predict a system's behavior given initial conditions.
+1. Data analytics and insight.
+1. Machine learning.
 
 The list is not a complete list of the domains in which computing produces outcomes
 for engineering and applied science, but it is
 an interesting subset.These four domains are major branches of Computer
-Science and software engineering.We will not be able to dive deeply into
+Science and software engineering. We will not be able to dive deeply into
 any of the domains. We will use simple problems from the domains to understand
 the role of computing in engineering/applied science, and for learning
-Python and CS principles. Any of these solutions domains require a
+Python and CS principles. Any of these solution domains require a
 significant amount of enablement libraries, frameworks and supporting software.
 Installing, configuring and learning the enabling tools can take more time, in the beginning,
 than the actual project. The TAs and I will provide help and guidance for setup, and project
 templates into which you can place your programs and modules.
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+## Course Material
 
-[Link to another page](Lectures/Lecture_1_Introduction.html).
+There are four subdirectories in this project:
 
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# [](#header-1)Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## [](#header-2)Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### [](#header-3)Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### [](#header-4)Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### [](#header-5)Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### [](#header-6)Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+1. [Lectures](/Lectures) contains HTML pages for each of the lectures. Direct web links for
+viewing the HTML lectures are:
+    - [Lecture 1: Introduction and Overview](/Lecture_1_Introduction)
+1. [CodeSamples](/CodeSamples) contains the same programs from lectures.
+1. [Data](/Data) contains SQL, CSV and other data files used in projects.
+1. [Notebooks](/Notebooks) contains the [Jupyter](http://jupyter.org/) Notebooks used
+for lectures.
