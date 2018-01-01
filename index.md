@@ -60,4 +60,4 @@ viewing the HTML lectures are:
 1. [Notebooks](./Notebooks) contains the [Jupyter](http://jupyter.org/) Notebooks used
 for lectures.
 
- 
+More to come
