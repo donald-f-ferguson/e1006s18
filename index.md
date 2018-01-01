@@ -38,7 +38,7 @@ four areas:
 
 The list is not a complete list of the domains in which computing produces outcomes
 for engineering and applied science, but it is
-an interesting subset.These four domains are major branches of Computer
+an interesting subset. These four domains are major branches of Computer
 Science and software engineering. We will not be able to dive deeply into
 any of the domains. We will use simple problems from the domains to understand
 the role of computing in engineering/applied science, and for learning
