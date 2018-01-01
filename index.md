@@ -59,3 +59,5 @@ viewing the HTML lectures are:
 1. [Data](./Data) contains SQL, CSV and other data files used in projects.
 1. [Notebooks](./Notebooks) contains the [Jupyter](http://jupyter.org/) Notebooks used
 for lectures.
+
+ 
