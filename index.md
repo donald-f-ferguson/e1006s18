@@ -10,7 +10,7 @@ the Spring 2018 semester.
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](index2).
+[Link to another page](Lectures/Lecture_1_Introduction.html).
 
 There should be whitespace between paragraphs.
 
