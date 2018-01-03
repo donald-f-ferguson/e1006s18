@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Lecture_1-Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>e1006-L1-s2018-Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11767,6 +11767,52 @@ div#notebook {
     });
     </script>
     <!-- End of mathjax configuration --></head>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://rawgit.com/ipython-contrib/jupyter_contrib_nbextensions/master/src/jupyter_contrib_nbextensions/nbextensions/toc2/main.css">
+
+<style type="text/css">
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.eot');
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.woff') format('woff'),
+         url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.ttf') format('truetype'),
+         url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+</style>
+
+<script src="https://rawgit.com/ipython-contrib/jupyter_contrib_nbextensions/master/src/jupyter_contrib_nbextensions/nbextensions/toc2/toc2.js"></script>
+
+<script>
+$( document ).ready(function(){
+
+            var cfg={'threshold':3,     // depth of toc (number of levels)
+             'number_sections': true,  // sections numbering
+             'toc_cell': false,          // useless here
+             'toc_window_display': true, // display the toc window
+             "toc_section_display": "block", // display toc contents in the window
+             'markTocItemOnScroll': false, 
+             'sideBar':true,             // sidebar or floating window
+             'navigate_menu':false,       // navigation menu (only in liveNotebook -- do not change)
+              title_cell: 'Table of Contents',
+              title_sidebar: 'Contents',
+            }
+
+            var st={};                  // some variables used in the script
+            st.oldTocHeight = undefined
+
+            // fire the main function with these parameters
+            require(['nbextensions/toc2/toc2'], function (toc2) {
+                toc2.table_of_contents(cfg, st);
+            });
+    });
+</script>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
@@ -11866,6 +11912,27 @@ div#notebook {
 </ul>
 <p><br>
 <img src="http://www.donald-ferguson.net/blog/wp-content/uploads/2018/01/weinbergs_law.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Course-Objectives">Course Objectives<a class="anchor-link" href="#Course-Objectives">&#182;</a></h2><ul>
+<li>Provide a foundation for your next level classes.<br>
+What you learn will be extremely useful in CS, engineering, science, finance, etc. courses.</li>
+</ul>
+<ul>
+<li>Ensure that you are able to successfully apply the technology in jobs, internships, etc.</li>
+</ul>
+<ul>
+<li>Make sure you have cool sounding things to put on resume and talk about in interviews.</li>
+</ul>
+<ul>
+<li>Have fun and enjoy the course and technology. I love this stuff and it can be a lot of fun.</li>
+</ul>
 
 </div>
 </div>
@@ -12287,7 +12354,7 @@ for a total value of 1165 and a total weight of 500
 <li>The two different solution approaches above are two differently algorithms.</li>
 </ul>
 <ul>
-<li>A <em>[data structure]</em>(<a href="https://en.wikipedia.org/wiki/Data_structure">https://en.wikipedia.org/wiki/Data_structure</a>) is a particular way of organizing and storing data in a computer so that it can be accessed and modified efficiently.More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data. </li>
+<li>A <a href="https://en.wikipedia.org/wiki/Data_structure"><em>data structure</em></a> is a particular way of organizing and storing data in a computer so that it can be accessed and modified efficiently.More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data. </li>
 </ul>
 <ul>
 <li>Any non-trivial programs is 100s of algorithms and data structures applied to solve subproblems, which are in turn combined by other algorithms and data structures, to solve the overall problem.</li>
@@ -12422,7 +12489,33 @@ for a total value of 1165 and a total weight of 500
 </li>
 <li>Try using the lecture 1 Jupyter Notebook and running the <a href="../CodeSamples/circle.py">sample program</a>. You can execute the program using the notebook, in Spyder or from a command line Python prompt.
 <br><br></li>
-<li>Join the <a href="https://piazza.com/class/jazexo9qv2lir">Piazza</a> course group and <a href="https://join.slack.com/t/dff-columbia/shared_invite/enQtMjg0Mzk4MTQwMzQxLTZlNzk3OTZmNWE2NzNmNzViZmJlMWVmNWVlZmUxZTU5NjkwYjQ1YTdjMzA3ZTMzZDM3ZmIwYzAyYjIwYTNkZDI">the slack channel E1006s18</a> (optional). </li>
+<li>Join the <a href="https://piazza.com/class/jazexo9qv2lir">Piazza</a> course group and <a href="https://join.slack.com/t/dff-columbia/shared_invite/enQtMjg0Mzk4MTQwMzQxLTZlNzk3OTZmNWE2NzNmNzViZmJlMWVmNWVlZmUxZTU5NjkwYjQ1YTdjMzA3ZTMzZDM3ZmIwYzAyYjIwYTNkZDI">the slack channel E1006s18</a> (optional). 
+<br><br></li>
+<li>Begin working on <a href="https://courseworks2.columbia.edu/courses/53496/assignments/134478">Homework 1</a>, discuss on Piazza and we will discuss in class. In a nutshell ...
+<br><br><ol>
+<li>Open a terminal/command prompt.<ol>
+<li>Type Python --version to make sure you have at least Python 3.</li>
+<li>Type Python</li>
+<li>At the Python command promot ("&gt;&gt;&gt;") type
+<pre><code>&gt;&gt;&gt; print ("Hello World!")
+&gt;&gt;&gt; x = 1
+&gt;&gt;&gt; y = 2
+&gt;&gt;&gt; x+y
+&gt;&gt;&gt; z=x+y
+&gt;&gt;&gt; z
+&gt;&gt;&gt; square=z*z
+&gt;&gt;&gt; square
+&gt;&gt;&gt; square="The square of " + (x+y) + " is " + square
+&gt;&gt;&gt; square="The square of " + str((x+y)) + " is " + str(square)
+&gt;&gt;&gt; square</code></pre>
+<br></li>
+</ol>
+</li>
+<li>Your output should be something like ...
+<br><br>
+<img src="../images/prog1.jpeg" width="100%"></li>
+</ol>
+</li>
 </ol>
 
 </div>
