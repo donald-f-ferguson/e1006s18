@@ -76,7 +76,7 @@ def main():
         description='simulate the Monty Hall problem')
     parser.add_argument('--doors', default=3, type=int, metavar='int',
                         help='number of doors offered to the contestant')
-    parser.add_argument('--trials', default=1000000, type=int, metavar='int',
+    parser.add_argument('--trials', default=100000000, type=int, metavar='int',
                         help='number of trials to perform')
     parser.add_argument('--verbose', default=False, action='store_true',
                         help='display the results of each trial')

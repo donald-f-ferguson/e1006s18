@@ -11834,63 +11834,6 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Monte-Carlo-Simulation">Monte Carlo Simulation<a class="anchor-link" href="#Monte-Carlo-Simulation">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">throwFairDie</span><span class="p">():</span>
-    <span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
-    <span class="k">return</span> <span class="n">rnd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">testDie</span><span class="p">(</span><span class="n">tries</span><span class="p">):</span>
-    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tries</span><span class="p">):</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="n">throwFairDie</span><span class="p">()</span>
-        <span class="n">values</span><span class="p">[</span><span class="n">v</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">v</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">values</span>
-
-<span class="n">values</span> <span class="o">=</span> <span class="n">testDie</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Values = &quot;</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-<span class="n">values</span> <span class="o">=</span> <span class="n">testDie</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Values = &quot;</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-<span class="n">values</span> <span class="o">=</span> <span class="n">testDie</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Values = &quot;</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Values =  [11, 20, 19, 25, 14, 11]
-Values =  [175, 185, 160, 164, 163, 153]
-Values =  [1667, 1697, 1713, 1650, 1639, 1634]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Follow-Up-From-Lecture-3">Follow Up From Lecture 3<a class="anchor-link" href="#Follow-Up-From-Lecture-3">&#182;</a></h2><h3 id="Not-Equal-Comparison-Operator">Not Equal Comparison Operator<a class="anchor-link" href="#Not-Equal-Comparison-Operator">&#182;</a></h3><ul>
 <li>My slides listed != and &lt;&gt; to mean "evaluate to True" if the operands are not equal.<ul>
 <li>(3 != 4) $\rightarrow$ True</li>
@@ -11935,17 +11878,8 @@ Values =  [1667, 1697, 1713, 1650, 1639, 1634]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="0,-and-True-(Corrected)">0, and True (Corrected)<a class="anchor-link" href="#0,-and-True-(Corrected)">&#182;</a></h3><ul>
-<li>This was a very interesting question. My initial answer was superficial in lecture 3.</li>
-</ul>
-<ul>
-<li>My more sophisticated answer in lecture 4 was compelling, thoughtful, well-articulated and wrong.</li>
-</ul>
-<ul>
-<li>What I said about coercion, bitwise comparison, ... is true in languages and environments but was wrong with respect to <em>boolean and</em></li>
-</ul>
-<p><strong>Some Examples</strong></p>
-
+<h3 id="0,-and-True">0, and True<a class="anchor-link" href="#0,-and-True">&#182;</a></h3><p>This was a very interesting question. My initial answer was superficial.</p>
+<h4 id="Some-Examples">Some Examples<a class="anchor-link" href="#Some-Examples">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -11974,39 +11908,6 @@ Values =  [1667, 1697, 1713, 1650, 1639, 1634]
 
 <div class="output_text output_subarea output_execute_result">
 <pre>0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="s2">&quot;Cat&quot;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[1]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Cat&#39;</pre>
 </div>
 
 </div>
@@ -12081,48 +11982,178 @@ Values =  [1667, 1697, 1713, 1650, 1639, 1634]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>From the Python 3.6 reference (<a href="https://docs.python.org/3/reference/expressions.html#and">https://docs.python.org/3/reference/expressions.html#and</a>)</p>
-<ul>
-<li>The expression x and y first evaluates x; if x is false, its value is returned; otherwise, y is evaluated and the resulting value is returned.</li>
-</ul>
-<ul>
-<li>The expression x or y first evaluates x; if x is true, its value is returned; otherwise, y is evaluated and the resulting value is returned.</li>
-</ul>
-<p>What evaluates to true is an interesting question.</p>
-<table>
-<thead><tr>
-<th style="text-align:center"><img src="../images/L5_true.jpeg"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><a href="https://en.wikibooks.org/wiki/Non-Programmer%27s_Tutorial_for_Python_3/Boolean_Expressions"><strong>Evaluates to True</strong></a></td>
-</tr>
-</tbody>
-</table>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
 
 </div>
 </div>
 </div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">[]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An empty list evaluated to true.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An empty list evaluated to False (not True)&quot;</span><span class="p">)</span>
-    
-<span class="k">if</span> <span class="p">([]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An empty list is equal to F.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An empty list evaluates to False but is not equal to False.&quot;</span><span class="p">)</span>
-    
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">10</span> <span class="ow">and</span> <span class="mi">10</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ow">not</span> <span class="mi">0</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ow">not</span> <span class="mi">10</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This one is weird.&quot;</span><span class="p">)</span>
+<span class="s2">&quot;Cat&quot;</span> <span class="ow">and</span> <span class="mi">10</span>
 </pre></div>
 
 </div>
@@ -12139,8 +12170,163 @@ Values =  [1667, 1697, 1713, 1650, 1639, 1634]
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>An empty list evaluated to False (not True)
-An empty list evaluates to False but is not equal to False.
+<pre>This one is weird.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[67]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;So is this one.&quot;</span><span class="p">)</span>
+<span class="s2">&quot;Cat&quot;</span> <span class="ow">and</span> <span class="s2">&quot;Cat&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>So is this one.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[68]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Cat&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;And this one.&quot;</span><span class="p">)</span>
+<span class="s2">&quot;Cat&quot;</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>And this one.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[80]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Remember,<ol>
+<li>Everything in a computer is binary.</li>
+<li>An operator has one or two operands, which must be compatible.</li>
+<li>The compiler will implicitly convert <a href="https://docs.python.org/2.5/ref/coercion-rules.html">(<em>coerce</em>)</a> operands to achieve compatibility.</li>
+<li>The <em>result type</em> depends on the operator and (coerced) operands.</li>
+</ol>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1.1414</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In this example, x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;and x+y = &quot;</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The types are type(x) = &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot; type(y)= &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="s2">&quot; type(z) = &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>In this example, x =  1 y =  1.1414 and x+y =  2.1414
+The types are type(x) =  &lt;class &#39;int&#39;&gt;  type(y)=  &lt;class &#39;float&#39;&gt;  type(z) =  &lt;class &#39;float&#39;&gt;
 </pre>
 </div>
 </div>
@@ -12148,6 +12334,145 @@ An empty list evaluates to False but is not equal to False.
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The interpreter/compiler converted/coerced x from int to float to achieve compatibility with y.</li>
+</ul>
+<ul>
+<li>You can implicitly coerce an int to a float, but not vice versa.</li>
+</ul>
+<ul>
+<li>"and" has two interpretations<ul>
+<li><em>boolean and</em></li>
+<li><em>bitwise logical and</em></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mb">0b11111111</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mb">0b10010011</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;and in binary is &quot;</span><span class="p">,</span><span class="nb">bin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;and in binary is &quot;</span><span class="p">,</span> <span class="nb">bin</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a and y is &quot;</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Which makes no sense until you realize that &quot;</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="s2">&quot; is &quot;</span><span class="p">,</span> <span class="nb">bin</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="s2">&quot;binary&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>x =  255 and in binary is  0b11111111
+y =  147 and in binary is  0b10010011
+a and y is  147
+Which makes no sense until you realize that  147  is  0b10010011 binary
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>In bitwise <em>and</em> of two binary numbers z = x and y, z[i] is 1 iff x[1] and y[i] are both 1.</li>
+</ul>
+<ul>
+<li>Within reason, everything is ultimately binary $\Rightarrow$ every can be coerced to binary.</li>
+</ul>
+<ul>
+<li>Which means that 'C' <em>and</em> 12 is meaningful in bitwise <em>and</em></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;ord(x) = &quot;</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;bin(ord(x)) = &quot;</span><span class="p">,</span><span class="nb">bin</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;, bin(y)) = &quot;</span><span class="p">,</span><span class="nb">bin</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;z = &quot;</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="s2">&quot;, bin(z)) = &quot;</span><span class="p">,</span><span class="nb">bin</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Because z[i] is 1 only where x[i] and y[i] are both 1&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>x =  D ord(x) =  68 bin(ord(x)) =  0b1000100
+Y =  True , bin(y)) =  0b1
+z =  True , bin(z)) =  0b1
+Because z[i] is 1 only where x[i] and y[i] are both 1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>(0 and True) coerces bool True to 0 and the result is an integer.</li>
+</ul>
+<ul>
+<li>(True and True) does not require coercion.</li>
+</ul>
+<ul>
+<li>The <a href="https://wiki.python.org/moin/BitwiseOperators"><em>bitwise operators</em></a> are &lt;&lt;, &gt;&gt;, &amp;, |, ~, and ^</li>
+</ul>
+<ul>
+<li>This is confusing and why we have the operators is probably unclear at this point, but they are extremely useful for some scenarios.</li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
