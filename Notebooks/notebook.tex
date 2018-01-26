@@ -1,0 +1,2023 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{e1006-L3-s2018-Operators}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \section{Introduction to Computing for Engineers and Computer
+ScientistsBuilt-In Types, Expressions, Operators, Testing, Control
+Flow}\label{introduction-to-computing-for-engineers-and-computer-scientistsbuilt-in-types-expressions-operators-testing-control-flow}
+
+    \subsection{Logistics}\label{logistics}
+
+\begin{itemize}
+\item
+  I am meeting with the course assistants tomorrow. The CAs will post
+  their office hours on Piazza in a day or two.
+\item
+  I delayed the due date for HW1 to 30-Jan because of the setup
+  problems, and the fact that I have not coordinated with the CAs.
+\item
+  We seem to have two Piazza forums for the class. Please use the one
+  linked from CourseWorks, which most of you seem to have been using.
+  (piazza.com/columbia/spring2018/engie1006\_001\_2018\_1introtocompforengappsci)
+\end{itemize}
+
+    \subsection{Questions}\label{questions}
+
+\subsubsection{Limit on Numbers}\label{limit-on-numbers}
+
+After the last lecture:
+
+\begin{itemize}
+\item
+  Student question -"Hey, Prof. You told us the biggest number in a
+  computer is \(2^{64}.\)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The largest known prime number is \(2^{77,232,917} − 1\)
+    (https://en.wikipedia.org/wiki/Largest\_known\_prime\_number)
+  \item
+    Presumably they used a computer to figure this out, how did that
+    work?"
+  \end{itemize}
+\item
+  Prof Answer: "From the Python 3 manual, 'The sys.maxint constant was
+  removed, since there is no longer a limit to the value of integers.'"
+\item
+  Student: "Umm. How does that work?"
+\item
+  Prof Answer:
+\end{itemize}
+
+    \paragraph{Floating Point}\label{floating-point}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}49}]:} \PY{k+kn}{import} \PY{n+nn}{sys}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The largest Python float possible on my system is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sys}\PY{o}{.}\PY{n}{float\PYZus{}info}\PY{o}{.}\PY{n}{max}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The largest exponent for base 10 is  }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sys}\PY{o}{.}\PY{n}{float\PYZus{}info}\PY{o}{.}\PY{n}{max\PYZus{}10\PYZus{}exp}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Maximum number of digits of precision is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sys}\PY{o}{.}\PY{n}{float\PYZus{}info}\PY{o}{.}\PY{n}{dig}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+The largest Python float possible on my system is  1.7976931348623157e+308
+The largest exponent for base 10 is   308
+Maximum number of digits of precision is  15
+
+    \end{Verbatim}
+
+    \begin{itemize}
+\item
+  1.7976931348623157e+308 has has 308 decimal digits.
+\item
+  \(2^{1023} \approx 8.988465674312 \times 10^{307} \approx 0.8988465674312 \times 10^{308}\)
+\item
+  The 52-mantissa (in binary) is 1.111111 ... 111.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Binary \(1.111111111111111111111111\) = \(1.99999994039535522461\)
+    decimal.
+  \item
+    So, we get
+    \((1.99999994039535522461 \times 0.8988465674312) \times 10^{308} \approx 1.797693081287 \times 10^{308}\)
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Integers}\label{integers}
+
+\begin{itemize}
+\item
+  Since we have 64 bits, it seems the largest integer could be
+  \(2^{63}\) with 1 bit for sign.
+\item
+  This is pretty big, but ...
+
+  \begin{itemize}
+  \tightlist
+  \item
+    "The sys.maxint constant was removed, since there is no longer a
+    limit to the value of integers."
+    (https://docs.python.org/3/whatsnew/3.0.html)
+  \item
+    The largest known prime number is \(2^{77,232,917} − 1,\) which has
+    23,249,425 digits.
+  \end{itemize}
+\item
+  How does this work?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Python, and other languages' libraries, do not use the built-in
+    hardware for very large numbers.
+  \item
+    The libraries do it symbolically using software.
+  \end{itemize}
+\item
+  \(2^{64} \approx 1.844674407371\times10^{19}\), which has 20 digits.
+\item
+  What is the sum of the following 25 digit numbers?
+
+  \begin{equation}
+  1234567890123456789012345 + 10987654321098765432109875
+  \end{equation}
+\item
+  You could do this with a pencil and piece of paper, by basically
+  following a "program" you learned in school.
+\item
+  The computer treats very large integers as an array of digits and
+  follows an algorithm similar to what you learned in school.
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{c+c1}{\PYZsh{} This module supports addition of large, positive integers.}
+        \PY{c+c1}{\PYZsh{} An example is}
+        \PY{c+c1}{\PYZsh{} 1234567890123456789012345 + 10987654321098765432109875}
+        \PY{c+c1}{\PYZsh{} Both operands are larger than sys.maxsize = 9223372036854775807,}
+        \PY{c+c1}{\PYZsh{} which is the largest integer the system can represent in 64 bits.}
+        \PY{c+c1}{\PYZsh{}}
+        \PY{c+c1}{\PYZsh{} The module symbolically does the addition they way students}
+        \PY{c+c1}{\PYZsh{} learn in in school. The integer input is a text string of digits.}
+        \PY{c+c1}{\PYZsh{}}
+        \PY{c+c1}{\PYZsh{} The module expands each operand to a list of digits, and then adds}
+        \PY{c+c1}{\PYZsh{} one position at a time, with support for carry.}
+        \PY{c+c1}{\PYZsh{}}
+        
+        \PY{c+c1}{\PYZsh{} Input is a string of the form \PYZdq{}109876\PYZdq{}}
+        \PY{c+c1}{\PYZsh{} Output is an array of the form [1, 0, 9, 8, 7, 6]}
+        \PY{c+c1}{\PYZsh{} NOTE: The function should, but does not check for bad input like}
+        \PY{c+c1}{\PYZsh{} non\PYZhy{}digits.}
+        \PY{c+c1}{\PYZsh{}}
+        \PY{k}{def} \PY{n+nf}{num\PYZus{}str\PYZus{}to\PYZus{}digits}\PY{p}{(}\PY{n}{num}\PY{p}{)}\PY{p}{:}
+            \PY{c+c1}{\PYZsh{} Hold the result.}
+            \PY{n}{digits} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+            
+            \PY{c+c1}{\PYZsh{} Loop through each character in the string.}
+            \PY{k}{for} \PY{n}{char} \PY{o+ow}{in} \PY{n}{num}\PY{p}{:}
+                \PY{c+c1}{\PYZsh{} Convert the character in the position, e.g. \PYZsq{}3\PYZsq{}}
+                \PY{c+c1}{\PYZsh{} To the integer it represents, e.g. 3}
+                \PY{c+c1}{\PYZsh{} And append to the array}
+                \PY{n}{digits}\PY{o}{.}\PY{n}{append}\PY{p}{(} \PY{n+nb}{int}\PY{p}{(}\PY{n}{char}\PY{p}{)} \PY{p}{)}
+                
+            \PY{c+c1}{\PYZsh{} return the result}
+            \PY{k}{return} \PY{n}{digits}
+        
+        \PY{c+c1}{\PYZsh{} Reverse of num\PYZus{}str\PYZus{}to\PYZus{}digits.}
+        \PY{c+c1}{\PYZsh{} Takes an input of the form [1, 2, 3, 7]}
+        \PY{c+c1}{\PYZsh{} Returns \PYZdq{}1237\PYZdq{}}
+        \PY{c+c1}{\PYZsh{}}
+        \PY{k}{def} \PY{n+nf}{digits\PYZus{}to\PYZus{}num\PYZus{}str}\PY{p}{(}\PY{n}{d}\PY{p}{)}\PY{p}{:}
+            \PY{c+c1}{\PYZsh{} map the str(x) function to each element in the list}
+            \PY{c+c1}{\PYZsh{} The map converts [1, 2, 3, 7] to [\PYZdq{}1\PYZdq{}, \PYZdq{}2\PYZdq{}, \PYZdq{}3\PYZdq{}, \PYZdq{}7\PYZdq{}]}
+            \PY{c+c1}{\PYZsh{} Then return a string which is the elements \PYZdq{}joined\PYZdq{}}
+            \PY{n}{s} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{str}\PY{p}{,}\PY{n}{d}\PY{p}{)}\PY{p}{)}
+            \PY{k}{return} \PY{n}{s}
+        
+        \PY{c+c1}{\PYZsh{} The input is an array of digits and a position.}
+        \PY{c+c1}{\PYZsh{} The position is the 10\PYZca{}i digit in the list representation}
+        \PY{c+c1}{\PYZsh{} of the number, e.g. if i is 3 and num is [1, 2, 3, 4, 5] the}
+        \PY{c+c1}{\PYZsh{} result is 2. If i is 0, the result is 5.}
+        \PY{c+c1}{\PYZsh{}}
+        \PY{c+c1}{\PYZsh{} If the 10s position is higher than the numer of digits, return 0}
+        \PY{c+c1}{\PYZsh{}}
+        \PY{k}{def} \PY{n+nf}{get\PYZus{}digit\PYZus{}from\PYZus{}list}\PY{p}{(}\PY{n}{num}\PY{p}{,} \PY{n}{i}\PY{p}{)}\PY{p}{:}
+            \PY{n}{result} \PY{o}{=} \PY{l+m+mi}{0}
+            
+            \PY{c+c1}{\PYZsh{} Length of the list. Also means that the highest 10s position}
+            \PY{c+c1}{\PYZsh{} is 10**(len \PYZhy{} 1)}
+            \PY{c+c1}{\PYZsh{}}
+            \PY{n}{length} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{num}\PY{p}{)}
+            
+            \PY{c+c1}{\PYZsh{} We need to start at the end. So, the zero position is \PYZhy{}1,}
+            \PY{c+c1}{\PYZsh{} the 10s position is \PYZhy{}2, ... We also need to check if the 10s}
+            \PY{c+c1}{\PYZsh{} position is to larger.}
+            \PY{n}{i} \PY{o}{=} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}
+            \PY{k}{if} \PY{n}{i} \PY{o}{\PYZgt{}} \PY{n}{length}\PY{p}{:}
+                \PY{n}{result} \PY{o}{=} \PY{l+m+mi}{0}
+            \PY{k}{else}\PY{p}{:}
+                \PY{n}{result} \PY{o}{=} \PY{n}{num}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1} \PY{o}{*} \PY{n}{i}\PY{p}{]}
+                
+            \PY{c+c1}{\PYZsh{} Return result.}
+            \PY{k}{return} \PY{n}{result}
+        
+        
+        \PY{c+c1}{\PYZsh{} Perform symbolic addition.}
+        \PY{c+c1}{\PYZsh{} Input is two lists of integers symbolically representing a number.}
+        \PY{c+c1}{\PYZsh{} For example, [1, 2, 0, 9] represents \PYZdq{}1209\PYZdq{}}
+        \PY{c+c1}{\PYZsh{} The result is a symbolic representation of the sum. For example}
+        \PY{c+c1}{\PYZsh{} [1, 2, 3, 4] + [9, 1, 1, 1] is [1,0,3,4,5]}
+        \PY{c+c1}{\PYZsh{}}
+        \PY{k}{def} \PY{n+nf}{add\PYZus{}num\PYZus{}arrays}\PY{p}{(}\PY{n}{n1}\PY{p}{,} \PY{n}{n2}\PY{p}{)}\PY{p}{:}
+            
+            \PY{c+c1}{\PYZsh{} Get length of the longest number. Addition needs to}
+            \PY{c+c1}{\PYZsh{} process every decimal place.}
+            \PY{n}{max\PYZus{}len} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{n1}\PY{p}{)}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{n2}\PY{p}{)}\PY{p}{)}
+            
+            \PY{c+c1}{\PYZsh{} Placeholder for result.}
+            \PY{n}{result} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+            
+            \PY{c+c1}{\PYZsh{} Represents the 10s position we are adding, and starts at 0}
+            \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
+            \PY{c+c1}{\PYZsh{} Do we have to carry the 1 to the next position.}
+            \PY{n}{carry} \PY{o}{=} \PY{l+m+mi}{0}
+            
+            \PY{c+c1}{\PYZsh{} Loop and examine every digit.}
+            \PY{k}{while} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{max\PYZus{}len}\PY{p}{:}
+                
+                \PY{c+c1}{\PYZsh{} Get the 10**i digit from each number.}
+                \PY{n}{d1} \PY{o}{=} \PY{n}{get\PYZus{}digit\PYZus{}from\PYZus{}list}\PY{p}{(}\PY{n}{n1}\PY{p}{,} \PY{n}{i}\PY{p}{)}
+                \PY{n}{d2} \PY{o}{=} \PY{n}{get\PYZus{}digit\PYZus{}from\PYZus{}list}\PY{p}{(}\PY{n}{n2}\PY{p}{,} \PY{n}{i}\PY{p}{)}
+                \PY{c+c1}{\PYZsh{}print(\PYZdq{}The two digits are \PYZdq{}, d1, \PYZdq{}, \PYZdq{}, d2)}
+                
+                \PY{c+c1}{\PYZsh{} Next pass through the loop will examine 10**(i+1)}
+                \PY{c+c1}{\PYZsh{} if one of the numbers is big enough}
+                \PY{n}{i} \PY{o}{=} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}
+                
+                \PY{c+c1}{\PYZsh{} The result value for 10**i is the sum of the two}
+                \PY{c+c1}{\PYZsh{} digits plus anything carried.}
+                \PY{n}{new\PYZus{}digit} \PY{o}{=} \PY{n}{d1} \PY{o}{+} \PY{n}{d2} \PY{o}{+} \PY{n}{carry}
+                
+                \PY{c+c1}{\PYZsh{} If the digit is larger than 10, subtract 10 and carry 1}
+                \PY{k}{if} \PY{n}{new\PYZus{}digit} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{l+m+mi}{10}\PY{p}{:}
+                    \PY{n}{carry} \PY{o}{=} \PY{l+m+mi}{1}
+                    \PY{n}{new\PYZus{}digit} \PY{o}{=} \PY{n}{new\PYZus{}digit} \PY{o}{\PYZhy{}} \PY{l+m+mi}{10}
+                \PY{k}{else}\PY{p}{:}
+                    \PY{n}{carry} \PY{o}{=} \PY{l+m+mi}{0}
+                
+                \PY{c+c1}{\PYZsh{} Add the digit to the result at the beginning. We compute the}
+                \PY{c+c1}{\PYZsh{} result going right to left.}
+                \PY{n}{result}\PY{o}{.}\PY{n}{insert}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{new\PYZus{}digit}\PY{p}{)}
+                
+            \PY{c+c1}{\PYZsh{} When we have processed all digits, if we still have a carry,}
+            \PY{c+c1}{\PYZsh{} then we add a 1 at the beginning.}
+            \PY{k}{if} \PY{n}{carry} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{:}
+                \PY{n}{result}\PY{o}{.}\PY{n}{insert}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+                
+            \PY{k}{return} \PY{n}{result}
+        
+        
+        \PY{c+c1}{\PYZsh{} This code below would be in a separate file that we use to test the module above.}
+        \PY{c+c1}{\PYZsh{} Just easiest to put here for now.}
+        \PY{c+c1}{\PYZsh{}}
+        \PY{n}{num1} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{1234567890123456789012345}\PY{l+s+s2}{\PYZdq{}}
+        \PY{n}{num2} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{10987654321098765432109875}\PY{l+s+s2}{\PYZdq{}}
+        \PY{n}{num3} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{8234}\PY{l+s+s2}{\PYZdq{}}
+        \PY{n}{num4} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{1906}\PY{l+s+s2}{\PYZdq{}}
+        
+        \PY{n}{dig1} \PY{o}{=} \PY{k+kc}{None}
+        \PY{n}{dig2} \PY{o}{=} \PY{k+kc}{None}
+        \PY{n}{dig3} \PY{o}{=} \PY{k+kc}{None}
+            
+        \PY{k}{def} \PY{n+nf}{test\PYZus{}digits\PYZus{}to\PYZus{}num\PYZus{}str}\PY{p}{(}\PY{n}{d}\PY{p}{)}\PY{p}{:}
+            \PY{n}{s} \PY{o}{=} \PY{n}{digits\PYZus{}to\PYZus{}num\PYZus{}str}\PY{p}{(}\PY{n}{d}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Coverting }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{to a num string is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{)}
+            
+        \PY{k}{def} \PY{n+nf}{test\PYZus{}string\PYZus{}to\PYZus{}array}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{global} \PY{n}{dig1}
+            \PY{k}{global} \PY{n}{dig2}
+            \PY{k}{global} \PY{n}{dig3}
+            \PY{n}{dig1} \PY{o}{=} \PY{n}{num\PYZus{}str\PYZus{}to\PYZus{}digits}\PY{p}{(}\PY{n}{num1}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{dig1 = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{dig1}\PY{p}{)}
+            \PY{n}{dig2} \PY{o}{=} \PY{n}{num\PYZus{}str\PYZus{}to\PYZus{}digits}\PY{p}{(}\PY{n}{num2}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{dig2 = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{dig2}\PY{p}{)}
+            \PY{n}{dig3} \PY{o}{=} \PY{n}{num\PYZus{}str\PYZus{}to\PYZus{}digits}\PY{p}{(}\PY{n}{num3}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{dig3 = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{dig3}\PY{p}{)}
+        
+        \PY{k}{def} \PY{n+nf}{test\PYZus{}get\PYZus{}digit\PYZus{}from\PYZus{}list}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{n}{exp} \PY{o}{=} \PY{l+m+mi}{0}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{10 to }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{exp}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ place digit for }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{dig3}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{get\PYZus{}digit\PYZus{}from\PYZus{}list}\PY{p}{(}\PY{n}{dig3}\PY{p}{,} \PY{n}{exp}\PY{p}{)}\PY{p}{)}
+            \PY{n}{exp} \PY{o}{=} \PY{l+m+mi}{3}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{10 to }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{exp}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ place digit for }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{dig3}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{get\PYZus{}digit\PYZus{}from\PYZus{}list}\PY{p}{(}\PY{n}{dig3}\PY{p}{,} \PY{n}{exp}\PY{p}{)}\PY{p}{)}
+            \PY{n}{exp} \PY{o}{=} \PY{l+m+mi}{25}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{10 to }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{exp}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ place digit for }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{dig3}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{get\PYZus{}digit\PYZus{}from\PYZus{}list}\PY{p}{(}\PY{n}{dig3}\PY{p}{,} \PY{n}{exp}\PY{p}{)}\PY{p}{)}
+            
+        \PY{n}{test\PYZus{}string\PYZus{}to\PYZus{}array}\PY{p}{(}\PY{p}{)}
+        \PY{n}{test\PYZus{}get\PYZus{}digit\PYZus{}from\PYZus{}list}\PY{p}{(}\PY{p}{)}
+        
+        \PY{n}{dig1} \PY{o}{=} \PY{n}{num\PYZus{}str\PYZus{}to\PYZus{}digits}\PY{p}{(}\PY{n}{num1}\PY{p}{)}
+        \PY{n}{dig2} \PY{o}{=} \PY{n}{num\PYZus{}str\PYZus{}to\PYZus{}digits}\PY{p}{(}\PY{n}{num2}\PY{p}{)}
+        
+        \PY{n}{test\PYZus{}digits\PYZus{}to\PYZus{}num\PYZus{}str}\PY{p}{(}\PY{n}{dig1}\PY{p}{)}
+        
+        \PY{n}{dig3} \PY{o}{=} \PY{n}{num\PYZus{}str\PYZus{}to\PYZus{}digits}\PY{p}{(}\PY{n}{num3}\PY{p}{)}
+        \PY{n}{dig4} \PY{o}{=} \PY{n}{num\PYZus{}str\PYZus{}to\PYZus{}digits}\PY{p}{(}\PY{n}{num4}\PY{p}{)}
+        
+        \PY{n}{r} \PY{o}{=} \PY{n}{add\PYZus{}num\PYZus{}arrays}\PY{p}{(}\PY{n}{dig3}\PY{p}{,} \PY{n}{dig4}\PY{p}{)}
+        \PY{n}{r} \PY{o}{=} \PY{n}{digits\PYZus{}to\PYZus{}num\PYZus{}str}\PY{p}{(}\PY{n}{r}\PY{p}{)}
+        \PY{n+nb}{print} \PY{p}{(}\PY{n}{num3}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ + }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{num4}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{r}\PY{p}{)}
+        
+        \PY{n}{r} \PY{o}{=} \PY{n}{add\PYZus{}num\PYZus{}arrays}\PY{p}{(}\PY{n}{dig1}\PY{p}{,} \PY{n}{dig2}\PY{p}{)}
+        \PY{n}{r} \PY{o}{=} \PY{n}{digits\PYZus{}to\PYZus{}num\PYZus{}str}\PY{p}{(}\PY{n}{r}\PY{p}{)}
+        \PY{n+nb}{print} \PY{p}{(}\PY{n}{num1}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ + }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{num2}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{r}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+dig1 =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5]
+dig2 =  [1, 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 9, 8, 7, 5]
+dig3 =  [8, 2, 3, 4]
+10 to  0  place digit for  [8, 2, 3, 4]  is  4
+10 to  3  place digit for  [8, 2, 3, 4]  is  8
+10 to  25  place digit for  [8, 2, 3, 4]  is  0
+Coverting  [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5] to a num string is  1234567890123456789012345
+8234  +  1906  =  10140
+1234567890123456789012345  +  10987654321098765432109875  =  12222222211222222221122220
+
+    \end{Verbatim}
+
+    \paragraph{Comments}\label{comments}
+
+\begin{itemize}
+\item
+  We just implemented a simple \emph{algorithm.}
+\item
+  We also learned our first principle of software engineering \(-\)
+  {[}decomposition{]}(https://en.wikipedia.org/wiki/Decomposition\_(computer\_science):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Do not write one large program implementing all aspects of an
+    algorithm.
+  \item
+    Break the algorithm into sub-algorithms, e.g. "How do I get the 10i
+    position digit.
+  \item
+    Implement and test each smaller algorithm.
+  \item
+    Combine the smaller pieces into a solution.
+  \end{itemize}
+\item
+  Decomposition
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Produces more reliable software by complying with
+    \href{https://en.wikipedia.org/wiki/Bounded_rationality}{bounded
+    rationality}
+  \item
+    Improves productivity by enabling subteams to work in parallel on
+    subproblems.
+  \item
+    Produces resuable code and modules that may apply to other
+    solutions.
+  \end{itemize}
+\item
+  A complete solution would have to implement the additional integer
+  operators
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \$- \$ is obvious
+  \item
+    \(p \times q,\) but multiplcation is just repetitive addition.
+  \item
+    \(p \div q,\) but division is just a form of multiplication.
+  \item
+    Boolean operators \$ =, \lt, \le, \gt, \ge.\$ How to do this should
+    be clear. We just compare the individual digits and length instead
+    of adding.
+  \end{itemize}
+\item
+  You can extend the approach to floating point numbers.
+\item
+  Libraries that perform these function have optimizations. The
+  implementation above is simple and naive.
+\item
+  Python uses hardware representation for small enough integers, but
+  automatically converts to array like representations for larger
+  integers.
+\item
+  There are libraries that do infinite precision math for integers and
+  floats, e.g. http://mpmath.org/
+\item
+  \textbf{Net:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Programs can symbolically implement math in software for very large
+    numbers.
+  \item
+    The only practical limit is the total number of available memory
+    bytes for numbers.
+  \item
+    The approach is significantly slower than direct implementation in
+    hardware. Simplistically, 1 + 3 = 3
+
+    \begin{itemize}
+    \tightlist
+    \item
+      is one clock cycle if done in HW.
+    \item
+      Billions of clock cycles if done in SW.
+    \end{itemize}
+  \end{itemize}
+\item
+  I will explain HW arithmetic in a future lecture, but we have to learn
+  more Python right now.
+\end{itemize}
+
+    \subsection{Python Built-In Types}\label{python-built-in-types}
+
+\subsubsection{Overview}\label{overview}
+
+    \subsubsection{Numeric Types}\label{numeric-types}
+
+\begin{itemize}
+\item
+  Numeric types are straight forward and are what you expect.
+\item
+  There are a bunch of operators and functions, which we will cover
+  later.
+\item
+  There is a very powerful built-in math library, and some even more
+  powerful optional packages.
+\item
+  Some examples:
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}51}]:} \PY{k+kn}{import} \PY{n+nn}{math}
+         
+         \PY{n}{x} \PY{o}{=} \PY{l+m+mi}{4}
+         \PY{n}{y} \PY{o}{=} \PY{l+m+mf}{3.1416}
+         \PY{n}{z} \PY{o}{=} \PY{n+nb}{complex}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}
+         \PY{n}{c} \PY{o}{=} \PY{l+m+mi}{1}\PY{o}{+}\PY{l+m+mi}{2}\PY{n}{j}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Some basic objects:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{y = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{z = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{z}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{c = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{c}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Result of operations on objects.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{z + c }\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{z}\PY{o}{+}\PY{n}{c}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x + y }\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x} \PY{o}{+} \PY{n}{y}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x * c }\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x}\PY{o}{*}\PY{n}{c}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Result of some more operations on objects.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The real part of z is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{z}\PY{o}{.}\PY{n}{real}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The imaginary part of z  is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{z}\PY{o}{.}\PY{n}{imag}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The integer part of y is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{int}\PY{p}{(}\PY{n}{y}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{I can also compute the ceiling of y, which is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{math}\PY{o}{.}\PY{n}{ceil}\PY{p}{(}\PY{n}{y}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x / y = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x} \PY{o}{/} \PY{n}{y}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x // y =}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x} \PY{o}{/}\PY{o}{/}\PY{n}{y}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Some basic objects:
+x =  4
+y =  3.1416
+z =  (4+3.1416j)
+c =  (1+2j)
+
+Result of operations on objects.
+z + c 	 =  (5+5.1416j)
+x + y 	 =  7.1416
+x * c 	 =  (4+8j)
+
+Result of some more operations on objects.
+The real part of z is  4.0
+The imaginary part of z  is  3.1416
+The integer part of y is  3
+I can also compute the ceiling of y, which is  4
+x / y =  1.2732365673542145
+x // y = 1.0
+
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
+\item
+  Representing numberic types
+
+  \begin{itemize}
+  \tightlist
+  \item
+    int/Integer has 4 representations in Python
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Decimal:
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Digits are 0,1,2,3,4,5,6,7,8,9
+      \item
+        Examples are: 0, 231, 3978
+      \end{itemize}
+    \item
+      \href{https://en.wikipedia.org/wiki/Hexadecimal}{Hexadecimal}:
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Digits are 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
+      \item
+        Examples:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          0x23 = (2 * 16) + 3 = 35
+        \item
+          0xFA2 = (15 * (16 * 16) + (10 * 16) + 2 = 4002
+        \end{itemize}
+      \end{itemize}
+    \item
+      \href{https://en.wikipedia.org/wiki/Octal}{Octal}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Digits are 0,1,2,3,4,5,6,7
+      \item
+        Examples:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          0o21 = (2 * 8) + 1 = 17
+        \item
+          0o1001 = 513
+        \end{itemize}
+      \end{itemize}
+    \item
+      \href{https://en.wikipedia.org/wiki/Binary_number}{Binary}:
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Digits are 0,1
+      \item
+        Examples:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          0b11 = (1 * 2) + 1 = 3 -0b1000 = 8
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \item
+    A real number has two representations
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \href{https://en.wikipedia.org/wiki/Decimal_floating_point}{Floating
+      point decimal}:
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Format is (decimal int).(decimal int)
+      \item
+        Examples:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          3.1416
+        \item
+          2.7813
+        \item
+          1.1414
+        \end{itemize}
+      \end{itemize}
+    \item
+      \href{https://en.wikipedia.org/wiki/Scientific_notation}{Exponential
+      notation}: Also known as scientific notation
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Format is (floating point)e(int)
+      \item
+        Examples:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          21e3 = 21000
+        \item
+          0.000213e3 = 0.213
+        \end{itemize}
+      \end{itemize}
+    \item
+      \href{https://en.wikipedia.org/wiki/Complex_number}{Complex}:
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Format is (floating point)+(floating point)j
+      \item
+        Examples:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          2.1718+3.1416j = (2.1718+3.1416j)
+        \item
+          complex(3,21.3) = (3+21.3j)
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\item
+  Limits
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Numbers in the real world can be -infinity to infinity, and have
+    infinite number of decimal places.
+  \item
+    The basic types (classes) in Python have upper and lower bounds.
+  \item
+    There are modules that support increased limits and precision.
+  \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\tightlist
+\item
+  Rounding errors
+
+  \begin{itemize}
+  \tightlist
+  \item
+    In base 10, there is no decimal representation for irrational
+    numbers, e.g. 1/3 or sqrt(2).
+  \item
+    Some numbers are irrational in base 2, which is what a computer
+    uses, e.g. 0.1 So, (0.1 + 0.1 + 0.1) = 0.30000000000000004, and does
+    not equal 0.3
+  \item
+    This can break some fundamental laws of mathematics (algebra), e.g.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      math.sqrt(2) * math.sqrt(2) = 2.0000000000000004 and not 2.
+    \item
+      0.3 - 0.1 - 0.1 - 0.1 = -2.7755575615628914e-17, not 0
+    \item
+      (a + b) + c may or may not equal a + (b + c)
+    \end{itemize}
+  \item
+    This is a behavior of ALL computers and programming languages.
+  \item
+    In Python, you can handle with round()
+
+    \begin{itemize}
+    \tightlist
+    \item
+      0.1 + 0.1 + 0.1 does not equal 0.3
+    \item
+      round(0.1 + 0.1 + 0.1) DOES equal 0.3
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Sequency Types}\label{sequency-types}
+
+\paragraph{Overview and Text
+Sequences}\label{overview-and-text-sequences}
+
+The object type \emph{str}, or text sequence, is an example of the basic
+sequence pattern - There is an object of type "sequence."
+
+\begin{itemize}
+\item
+  In the example, the name of the object is \emph{t}
+\item
+  The object \emph{t} is itself made up of an iterable sequence of
+  objects. The name of each object is logically \emph{t{[}i{]}}, e.g.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    t{[}0{]}
+  \item
+    t{[}1{]}
+  \item
+    t{[}2{]}
+  \item
+    ... ...
+  \end{itemize}
+\item
+  A text sequence/str is simply a sequence in which each t{[}i{]} is a
+  "text character."
+\item
+  Remember,
+
+  \begin{itemize}
+  \tightlist
+  \item
+    In a computer, everything is a binary number.
+  \item
+    For text and characters, the \emph{encoding} determines the mapping
+    from integer value to printable character value.
+  \item
+    \href{https://en.wikipedia.org/wiki/ASCII}{ASCII} (American Standard
+    Code for Information Interchange) used to be very common, but was
+    "American" centric.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      An ASCII only encodes 127 characters, and comes from the teletype
+      days.
+    \item
+      ASCII does support non-English characters.
+    \end{itemize}
+  \item
+    IBM and some other systems used
+    \href{https://en.wikipedia.org/wiki/EBCDIC}{Extended Binary Coded
+    Decimal Interchange Code (EBCIDIC)} for a long time.\\
+  \item
+    \href{https://en.wikipedia.org/wiki/UTF-8}{UTF-8} is now the most
+    common encoding.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      UTF-8 encodes 1,112,064 characters from
+      \href{https://en.wikipedia.org/wiki/Unicode}{Unicode}.
+    \item
+      The first 127 numbers of ASCII and UTF-8 represent the same
+      characters, that is UTF-8 is a superset of ASCII.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\emph{Some initial fun with encodings} 
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}52}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{UTF (unicode) character number 20516 is = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{chr}\PY{p}{(}\PY{l+m+mi}{20516}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{There is no way to do this because ASCII is 1 byte and is 0 to 255}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ASCII is perfectly OK with 85 representing }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{chr}\PY{p}{(}\PY{l+m+mi}{85}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+UTF (unicode) character number 20516 is =  値
+There is no way to do this because ASCII is 1 byte and is 0 to 255
+ASCII is perfectly OK with 85 representing  U
+
+    \end{Verbatim}
+
+     \emph{Some function with text sequences (strings)} 
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}53}]:} \PY{n}{mm} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A simple string}\PY{l+s+s2}{\PYZdq{}}
+         
+         \PY{c+c1}{\PYZsh{} An sequence of bytes, which must be 0 .. 255}
+         \PY{n}{bb} \PY{o}{=} \PY{n+nb}{bytes}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{87}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{,} \PY{l+m+mi}{88}\PY{p}{,} \PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mi}{89}\PY{p}{]}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} A sequence of integers.}
+         \PY{n}{tt} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{87}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{,} \PY{l+m+mi}{88}\PY{p}{,} \PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mi}{89}\PY{p}{,} \PY{l+m+mi}{20516}\PY{p}{,} \PY{l+m+mi}{1023}\PY{p}{]}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mm = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{mm}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mm as a byte sequence = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{bytes}\PY{p}{(}\PY{n}{mm}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ascii}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bb as a byte array = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{bb}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bb as a string = }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{bb}\PY{o}{.}\PY{n}{decode}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ascii}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bb as a UTF string = }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{bb}\PY{o}{.}\PY{n}{decode}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{utf8}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Let}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{s access parts of things.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The fourth thing in mm is mm[3] which is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{mm}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bb as a string = }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{bb}\PY{o}{.}\PY{n}{decode}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ascii}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ and the fourth byte is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{bb}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bb as a string = }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{bb}\PY{o}{.}\PY{n}{decode}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ascii}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ and the second byte is }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{bb}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bb[1] is the integer }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{bb}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ which is the tab character.}\PY{l+s+s2}{\PYZdq{}} \PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Now some fun with sequence of integers}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{tt = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{tt}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Let}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{s try converting tt to a string. str(tt) = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{str}\PY{p}{(}\PY{n}{tt}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{I got a string representation of the list.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{How about a string (text sequence) which converted each int to a UTF\PYZhy{}8 chr?}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The answer is }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{.join(map(chr,tt))}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{chr}\PY{p}{,}\PY{n}{tt}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{and we will understand later.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+
+mm =  A simple string
+mm as a byte sequence =  b'A simple string'
+
+
+bb as a byte array =  b'W\textbackslash{}tX Y'
+bb as a string =  W	X Y
+bb as a UTF string =  W	X Y
+
+
+Let's access parts of things.
+The fourth thing in mm is mm[3] which is  i
+bb as a string =  W	X Y  and the fourth byte is  32
+bb as a string =  W	X Y  and the second byte is  9
+bb[1] is the integer  9  which is the tab character.
+
+Now some fun with sequence of integers
+tt =  [87, 9, 88, 32, 89, 20516, 1023]
+Let's try converting tt to a string. str(tt) =  [87, 9, 88, 32, 89, 20516, 1023]
+I got a string representation of the list.
+How about a string (text sequence) which converted each int to a UTF-8 chr?
+The answer is ''.join(map(chr,tt)) W	X Y値Ͽ 
+and we will understand later.
+
+    \end{Verbatim}
+
+    \paragraph{Mutable and Immutable}\label{mutable-and-immutable}
+
+"In object-oriented and functional programming, an \emph{immutable
+object} (unchangeable object) is an object whose state cannot be
+modified after it is created. This is in contrast to a \emph{mutable
+object} (changeable object), which can be modified after it is created."
+(https://en.wikipedia.org/wiki/Immutable\_object)
+
+\begin{itemize}
+\tightlist
+\item
+  Most simple objects are immutable
+
+  \begin{itemize}
+  \tightlist
+  \item
+    You cannot change the integer 10 to 11, 12.37 or "Hello."
+  \item
+    In the same way you cannot change 217345 to 341167, you cannot
+    change "Hello" to "Halo."
+  \end{itemize}
+\item
+  You can
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Change what instance names reference.
+  \item
+    Make new instances using parts of immutable objects.
+  \item
+    etc.
+  \end{itemize}
+\item
+  Mutability
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Is an important concept, and its importance will become clear in
+    future lectures.
+  \item
+    We will not focus on the concept in the early lectures or projects,
+    but you may occasionally hit find something that you think should
+    work, but does not.
+  \end{itemize}
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}54}]:} \PY{n}{s} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hello}\PY{l+s+s2}{\PYZdq{}}
+         \PY{n+nb}{print} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{s = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{)}
+         
+         \PY{n}{s2} \PY{o}{=} \PY{n}{s}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{a}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{s}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{:}\PY{l+m+mi}{5}\PY{p}{]}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{s2 = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s2}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+s =  Hello
+s2 =  Halo
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}55}]:} \PY{n}{s}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a}\PY{l+s+s1}{\PYZsq{}}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        TypeError                                 Traceback (most recent call last)
+
+        <ipython-input-55-f1f3e2e8e54a> in <module>()
+    ----> 1 s[1]='a'
+    
+
+        TypeError: 'str' object does not support item assignment
+
+    \end{Verbatim}
+
+    \paragraph{byte, bytearray, memoryview}\label{byte-bytearray-memoryview}
+
+\begin{itemize}
+\item
+  \emph{Byte} is the most basic unit of computer memory.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A byte is 8 bits (0/1 digits)
+  \item
+    Decimal 0 to 255.
+  \item
+    Binary 00000000 to 11111111
+  \item
+    Hexadecimal 00,01, ... 09,0A, ..., OF, 10, 11, ..., 1F, ... FF.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      A hex digit is 0 to F, which is 16 -\/-\textgreater{} 4 bits.
+    \item
+      A byte is 8 bits, or two hex digits.
+    \end{itemize}
+  \end{itemize}
+\item
+  byte is immutable. byte\_array \emph{is} mutable
+\item
+  We will worry about \emph{memoryview} later
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{x} \PY{o}{=} \PY{l+s+sa}{b}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{El ni}\PY{l+s+se}{\PYZbs{}xc3}\PY{l+s+se}{\PYZbs{}xb1}\PY{l+s+s1}{o come camar}\PY{l+s+se}{\PYZbs{}xc3}\PY{l+s+se}{\PYZbs{}xb3}\PY{l+s+s1}{n}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{x}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{x.decode(}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{utf\PYZhy{}8)}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{) = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{x}\PY{o}{.}\PY{n}{decode}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{utf\PYZhy{}8}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{x to int big endian = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{int}\PY{o}{.}\PY{n}{from\PYZus{}bytes}\PY{p}{(}\PY{n}{x}\PY{p}{,}  \PY{n}{byteorder}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{big}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{x to int big endian = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{int}\PY{o}{.}\PY{n}{from\PYZus{}bytes}\PY{p}{(}\PY{n}{x}\PY{p}{,}  \PY{n}{byteorder}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{little}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n}{y} \PY{o}{=} \PY{n+nb}{bytearray}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{y = bytearray(c) produces y =}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{n ASCII is the integer }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{ord}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+        \PY{n}{y}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{o}{=}\PY{n+nb}{ord}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{y}\PY{p}{[}\PY{l+m+mi}{6}\PY{p}{]}\PY{o}{=}\PY{n+nb}{ord}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{y}\PY{p}{[}\PY{l+m+mi}{7}\PY{p}{]}\PY{o}{=}\PY{n+nb}{ord}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{I can change a bytearray. y[5]= the into ASCIii n, y[6] to ASCII o and y[7] to ASCII \PYZlt{}space\PYZgt{}, }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{produces y = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{itemize}
+\tightlist
+\item
+  'enye' requires two bytes
+
+  \begin{itemize}
+  \tightlist
+  \item
+    I turned the first byte into 'n'
+  \item
+    And the second by to \textless{} space \textgreater{}
+  \end{itemize}
+\item
+  Why/when would you use \emph{byte}, \emph{bytearray} and
+  \emph{memoryview?}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Integer, float, string, ... are by far the most common. Most of our
+    projects will use these basic types and the other sequence types
+    (below).
+  \item
+    In many more advanced applications, you have to manipulate raw
+    bytes, e.g.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Image, audio, etc. processing.
+    \item
+      Cryptography
+    \item
+      Signal processing
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+    \paragraph{Lists, Sets, Maps}\label{lists-sets-maps}
+
+"Lists are mutable sequences, typically used to store collections of
+homogeneous items (where the precise degree of similarity will vary by
+application)." (https://docs.python.org/3/library/stdtypes.html\#list)
+
+Many other languages use the term "array" for the language's similar
+concept.
+
+\textbf{A simple example}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{x} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mf}{3.1416}\PY{o}{+}\PY{l+m+mf}{2.7318}\PY{n}{j}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hello}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+sa}{b}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{El ni}\PY{l+s+se}{\PYZbs{}xc3}\PY{l+s+se}{\PYZbs{}xb1}\PY{l+s+s1}{o come camar}\PY{l+s+se}{\PYZbs{}xc3}\PY{l+s+se}{\PYZbs{}xb3}\PY{l+s+s1}{n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{What is }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{similar}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{ about the elements of }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{?}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{All are examples of built\PYZhy{}in types used in the lecture}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \textbf{List are mutable}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{x} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mf}{3.1416}\PY{o}{+}\PY{l+m+mf}{2.7318}\PY{n}{j}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hello}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+sa}{b}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{El ni}\PY{l+s+se}{\PYZbs{}xc3}\PY{l+s+se}{\PYZbs{}xb1}\PY{l+s+s1}{o come camar}\PY{l+s+se}{\PYZbs{}xc3}\PY{l+s+se}{\PYZbs{}xb3}\PY{l+s+s1}{n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{x starts out as = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x}\PY{p}{)}
+        \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{n+nb}{bytes}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Canary}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{encode}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{UTF\PYZhy{}8}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{x becomes = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x}\PY{p}{)}
+        
+        \PY{n}{y} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{foo}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mf}{2e9}\PY{p}{]}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{y = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+        
+        \PY{n}{y} \PY{o}{=} \PY{n}{x} \PY{o}{+} \PY{n}{y}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{y becomes = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+        \PY{k}{del}\PY{p}{(}\PY{n}{y}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{y becomes = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+\end{Verbatim}
+
+
+    \textbf{Lists are fundamental of data, analytics and plotting}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np} 
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        
+        
+        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)} 
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Vector a = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{a}\PY{p}{)}
+        \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Vector b = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{b}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{The inner product of a and b is = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{inner}\PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n}{ad} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{add}\PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{The sum of a + b is the vector }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ad}\PY{p}{)}
+        
+        \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{axes}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{]}\PY{p}{)}
+        \PY{n}{l1} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{arrow}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{a}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{)}
+        \PY{n}{l2} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{arrow}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{b}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{b}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{b}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{)}
+        \PY{n}{l3} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{arrow}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{ad}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{ad}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{a+b}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{)}
+        \PY{n}{l4} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{arrow}\PY{p}{(}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{p}{(}\PY{n}{ad}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{ad}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{n}{head\PYZus{}width}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{head\PYZus{}length}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{b starting from  a}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{legend} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{handles}\PY{o}{=}\PY{p}{[}\PY{n}{l1}\PY{p}{,}\PY{n}{l2}\PY{p}{,} \PY{n}{l3}\PY{p}{,} \PY{n}{l4}\PY{p}{]}\PY{p}{,}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)} 
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+Vector a =  [1 3]
+Vector b =  [5 2]
+
+The inner product of a and b is =  11
+
+The sum of a + b is the vector  [6 5]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_27_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \subsubsection{Homework 1, Part B}\label{homework-1-part-b}
+
+\begin{itemize}
+\item
+  Due date, points and full description are on
+  \href{https://courseworks2.columbia.edu/courses/53496/assignments/134478}{CourseWorks}
+\item
+  Build a Jupyter notebook with the name "\textless{} uni
+  \textgreater{}\_assignment\_2"
+\item
+  Add the Python code from Assignment 1, Part A to a code cell in the
+  Jupyter notebook.
+\item
+  Build your UNI
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Create a Code cell in the notebook. Use python statements like a=23
+    or b="foo".
+  \item
+    Assign the names last\_name, first\_name, middle\_name to the string
+    values for your last, first and middle names.
+  \item
+    The prefix of your UNI is some combination of the first character of
+    the name string. For example, my full name is "Donald Francis
+    Ferguson" and my UNI prefix is "dff".
+  \item
+    The suffix of the UNI is a number. Assign the name uni\_suffix to
+    the integer number in your UNI. Mine would be the integer 9.
+  \item
+    Using modifications from the code in lecture 1 and 2, create a
+    string reprentation of your UNI and print it.
+  \item
+    Uppercase letters are fine, e.g. "DFF9" is a correct submission.
+  \end{itemize}
+\item
+  List
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Create a list that contains your first name, middle name, last name
+    and UNI.
+  \item
+    Remove your middle name from the list.
+  \item
+    Move the UNI to the first element in the list.
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Operators}\label{operators}
+
+    \subsubsection{Overview}\label{overview}
+
+References: - Punch and Embody, section 1.7. -
+\href{https://www.tutorialspoint.com/python/python_basic_operators.htm}{tutorialspoint}
+is also a good overview and tutorial.
+
+\href{}{Definitions:} "\emph{Operators} are special symbols in Python
+that carry out arithmetic or logical computation. The value(s) that the
+operator operates on is called the \emph{operand(s)}.
+
+Example: 4 + 5 == 9 versus 4 + 5 = 9 - 4 + 5 == 9 - Has three operands:
+4,5,9 - Two operators: +, == - o1 + o2 produces the arithmetic (or other
+sum) of the operands. - o1 == o2 produces True if o1 and o2 have the
+same value.
+
+\begin{itemize}
+\tightlist
+\item
+  4 + 5 = 9
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Has three operands: 4,5,9
+  \item
+    Two operators: +, =
+
+    \begin{itemize}
+    \tightlist
+    \item
+      o1 + o2 produces the arithmetic (or other sum) of the operands.
+    \item
+      o1 = o2 sets the value of o1 to the value of o2
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{l+m+mi}{4} \PY{o}{+} \PY{l+m+mi}{5}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{l+m+mi}{4} \PY{o}{+} \PY{l+m+mi}{5} \PY{o}{==} \PY{l+m+mi}{9}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{l+m+mi}{4} \PY{o}{+} \PY{l+m+mi}{5} \PY{o}{=} \PY{l+m+mi}{9}
+\end{Verbatim}
+
+
+    \begin{itemize}
+\tightlist
+\item
+  Why is 4 + 5 = 9 and error?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    4 + 5 produces 9.
+  \item
+    You cannot change the value of 9, even if you are trying to change
+    it to 9.
+  \end{itemize}
+\item
+  There are three kinds of operand
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Literal: 4, 3.12, "Cat", ...
+  \item
+    Identifier: Think variable (name), e.g. x, radius\_str,
+    circumference, ...
+  \item
+    Enclosure: Literals or identifier "enclosed" with (), {[}{]}, \{\},
+    ...
+  \end{itemize}
+\item
+  Python supports the following categories/kinds of operators:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Arithmetic Operators
+  \item
+    Comparison (Relational) Operators
+  \item
+    Assignment Operators
+  \item
+    Logical Operators
+  \item
+    Bitwise Operators
+  \item
+    Membership Operators
+  \item
+    Identity Operators
+  \end{itemize}
+\item
+  \emph{NOTE:} Trying to follow the book. So, will cover Bitwise,
+  Membership and Identity operators later.
+\end{itemize}
+
+    \subsubsection{Arithmetic Operators}\label{arithmetic-operators}
+
+Arithmetic operators operate on numeric types: integer, float, complex.
+
+\begin{longtable}[]{@{}c@{}}
+\toprule
+\tabularnewline
+\midrule
+\endhead
+\href{https://www.tutorialspoint.com/python/python_basic_operators.htm}{\textbf{Arithmetic
+Operators}}\tabularnewline
+\bottomrule
+\end{longtable}
+
+    Examples: 
+
+    Some of these operators also operate on more complex types: - The symbol
+is the same. - But the operator is different (context sensitive)
+
+    \begin{itemize}
+\tightlist
+\item
+  In the case of o1 \textless{} operator \textgreater{} o2,
+
+  \begin{itemize}
+  \tightlist
+  \item
+    o1 and o1 must be compatible with respect to the operator.
+  \item
+    The type of o1 and o2, and the operator determine the type of the
+    result.
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Comparison Operators}\label{comparison-operators}
+
+\begin{itemize}
+\tightlist
+\item
+  The basic format is op1 \textless{} operator \textgreater{} o2
+  produces either True or False.
+\end{itemize}
+
+\begin{longtable}[]{@{}c@{}}
+\toprule
+\tabularnewline
+\midrule
+\endhead
+\href{https://www.tutorialspoint.com/python/python_basic_operators.htm}{\textbf{Comparison
+Operators}}\tabularnewline
+\bottomrule
+\end{longtable}
+
+    \begin{itemize}
+\item
+  Comparison operators/expressions are most often used in control flow
+  statements (covered soon).
+\item
+  But here is an example:
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{import} \PY{n+nn}{math}
+        
+        \PY{k}{def} \PY{n+nf}{is\PYZus{}prime}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+            
+            \PY{n}{highest\PYZus{}candidate} \PY{o}{=} \PY{n}{math}\PY{o}{.}\PY{n}{floor}\PY{p}{(}\PY{n}{math}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Trying to check if }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{n}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ is prime.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Need to test integers from 2 ... }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{highest\PYZus{}candidate}\PY{p}{)}
+            
+            \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{2}
+            \PY{n}{divisors} \PY{o}{=} \PY{k+kc}{None}
+            
+            \PY{c+c1}{\PYZsh{} Comparison operator}
+            \PY{k}{while} \PY{p}{(}\PY{n}{i} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{highest\PYZus{}candidate}\PY{p}{)}\PY{p}{:}
+                \PY{n}{remainder} \PY{o}{=} \PY{n}{n} \PY{o}{\PYZpc{}} \PY{n}{i}
+                
+                \PY{c+c1}{\PYZsh{} Comparison operator.}
+                \PY{k}{if} \PY{p}{(}\PY{n}{remainder} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{:}
+                    \PY{c+c1}{\PYZsh{}print(\PYZdq{}The integer \PYZdq{}, i, \PYZdq{} divides \PYZdq{}, n)}
+                    
+                    \PY{c+c1}{\PYZsh{} Do not ask.}
+                    \PY{k}{if} \PY{p}{(}\PY{n}{divisors} \PY{o+ow}{is} \PY{k+kc}{None}\PY{p}{)}\PY{p}{:}
+                        \PY{n}{divisors} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                        
+                    \PY{n}{divisors}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                    
+                \PY{n}{i} \PY{o}{=} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}
+                
+            \PY{k}{return} \PY{n}{divisors}
+           
+            
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The divisors of 32 less than sqrt(32) are}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{is\PYZus{}prime}\PY{p}{(}\PY{l+m+mi}{32}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The divisors of 61 less than sqrt(61) are}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{is\PYZus{}prime}\PY{p}{(}\PY{l+m+mi}{61}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsubsection{Assignment Operators}\label{assignment-operators}
+
+The form is o1 \(operator\) o2, and sets o1 to the value produced by
+operator and o2.
+
+\begin{longtable}[]{@{}c@{}}
+\toprule
+\tabularnewline
+\midrule
+\endhead
+\href{https://www.tutorialspoint.com/python/python_basic_operators.htm}{\textbf{Assignment
+Operators}}\tabularnewline
+\bottomrule
+\end{longtable}
+
+    \begin{itemize}
+\tightlist
+\item
+  These ones drive me crazy and I never use them.
+\end{itemize}
+
+    \subsubsection{Logical Operators}\label{logical-operators}
+
+\begin{longtable}[]{@{}c@{}}
+\toprule
+\tabularnewline
+\midrule
+\endhead
+\href{https://www.tutorialspoint.com/python/python_basic_operators.htm}{\textbf{Logical
+Operators}}\tabularnewline
+\bottomrule
+\end{longtable}
+
+    
+
+    \subsubsection{Summary}\label{summary}
+
+The easiest thing to do is just play with the operators.
+
+    \subsection{Testing and Errors}\label{testing-and-errors}
+
+\subsubsection{Overview}\label{overview}
+
+Punch and Embody, section 1.9, 1.10, 1.11
+
+\textbf{Rule 5:} Test you code, often and thoroughly. (Section 1.9.1, p.
+72)
+
+Not particularly helpful. "Thank you, CPT Obvious."
+
+    \subsubsection{Errors}\label{errors}
+
+You will encounter three broad classes of errors. 1. Syntax: There is a
+grammar error and Python will not run your program at all. 2. Runtime:
+Your program is syntactically correct, and starts to run but fails. 3.
+Correctness: Your program runs to completion but produces an incorrect
+answer.
+
+\textbf{Syntax Error}
+
+The IDE typically flags these for you and will not try to run the
+program.
+
+\textbf{Runtime Error}
+
+The program is syntactically correct, but variable values get into
+states that cause errors. 1. Incompatible types for operations. 1.
+Unassigned name. 1. Divide by 0. 1. etc.
+
+    
+
+    \textbf{An Interesting Digression}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Let \(a\) and \(b\) be equal, non-zero quantities \(a=b\) 
+\item
+  Multiply both sides by \(a\) \(a^2 = ab\) 
+\item
+  Subtract \(b^2\) from both sides \(a^2 - b^2 = ab - b^2\) 
+\item
+  Do some factorization \((a + b)(a - b) = b(a - b)\) 
+\item
+  Divide both sides by a common value, and observe
+
+  \begin{equation*}
+  \frac{(a + b)(a - b)}{(a - b)} = \frac{b(a - b)}{(a - b)}
+  \end{equation*}
+\item
+  Thus, \(a + b = b\) 
+\item
+  Since (from 1) \(a = b,\) we get
+  \((a + b = a) \implies ((a + a) = a) \implies (2 x a = a) \implies (2 = 1)\)
+\end{enumerate}
+
+Computers will not make this mistake.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{1}
+        \PY{n}{b} \PY{o}{=} \PY{n}{a}
+        
+        \PY{p}{(}\PY{n}{a} \PY{o}{==} \PY{n}{b}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}1}]:} True
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{a}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{==} \PY{n}{a} \PY{o}{*} \PY{n}{b}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}2}]:} True
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{a}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{n}{b}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{==} \PY{n}{a}\PY{o}{*}\PY{n}{b} \PY{o}{\PYZhy{}} \PY{n}{b}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}3}]:} True
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{p}{(}\PY{n}{a} \PY{o}{+} \PY{n}{b}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{n}{a} \PY{o}{\PYZhy{}} \PY{n}{b}\PY{p}{)} \PY{o}{==} \PY{n}{b} \PY{o}{*} \PY{p}{(}\PY{n}{a} \PY{o}{\PYZhy{}} \PY{n}{b}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} True
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{p}{(}\PY{n}{a} \PY{o}{+} \PY{n}{b}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{a}\PY{o}{\PYZhy{}}\PY{n}{b}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{a}\PY{o}{\PYZhy{}}\PY{n}{b}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        ZeroDivisionError                         Traceback (most recent call last)
+
+        <ipython-input-5-bd14dce8c6c1> in <module>()
+    ----> 1 (a + b)*(a-b)/(a-b)
+    
+
+        ZeroDivisionError: division by zero
+
+    \end{Verbatim}
+
+    This formulation is pretty easy to spot, but there are much, much
+trickier versions that make it hard to spot divide by 0.
+
+    \textbf{Correctness Errors}
+
+\begin{itemize}
+\item
+  Correctness errors are by far the most difficult to resolve.
+\item
+  The program executes but produces an incorrect result.
+\item
+  There are countless causes. Some examples,
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The algorithm is incorrect.
+  \item
+    Mathematical formula looks correct, but parentheses and operator
+    precedence are wrong.
+  \item
+    Incorrect assumptions: Input is in kilograms but program uses pounds
+    and ounces.
+  \item
+    Various forms of overflow, e.g. the programmer assumed that a
+    counter or value would never wrap around to 0.
+  \end{itemize}
+\end{itemize}
+
+\emph{Mars Climate Orbiter}
+
+"The Mars Climate Orbiter (formerly the Mars Surveyor '98 Orbiter) was a
+338-kilogram (745 lb) robotic space probe launched by NASA on December
+11, 1998 to study the Martian climate, Martian atmosphere, and surface
+changes and to act as the communications relay in the Mars Surveyor '98
+program for Mars Polar Lander. However, on September 23, 1999,
+communication with the spacecraft was lost as the spacecraft went into
+orbital insertion, due to ground-based computer software which produced
+output in non-SI units of pound (force)-seconds (lbf·s) instead of the
+SI units of newton-seconds (N·s) specified in the contract between NASA
+and Lockheed. The spacecraft encountered Mars on a trajectory that
+brought it too close to the planet, causing it to pass through the upper
+atmosphere and disintegrate."
+(https://en.wikipedia.org/wiki/Mars\_Climate\_Orbiter\#Cause\_of\_failure)
+
+\emph{Therac 25}
+
+"Between June 1985 and January 1987, a computer-controlled radiation
+therapy machine, called the Therac-25, massively overdosed six people.
+These accidents have been described as the worst in the 35-year history
+of medical accelators.
+
+...
+
+On the Therac-25, the part of the computer program that is often
+referred to as the "house-keeper task" continuously checked to see
+whether the turntable was correctly positioned. A zero on the counter
+indicated to the technician that the turntable was in the correct
+position. Any value other than zero meant that it wasn't, and that
+treatment couldn't begin. The computer would then make the necessary
+corrections and the counter would reset itself to zero.
+
+But the highest value the counter could register was 255. If the program
+reached 256 checks, the counter automatically clicked back to zero, the
+same way that a car odometer turns over to zero after you've driven more
+than 99,999.99 kilometres. For that split second, the Therac-25 believed
+it was safe to proceed when, in fact, it wasn't. If the technician hit
+the "set" button to begin treatment at that precise moment, the
+turntable would be in the wrong position and the patient would be struck
+by a raw beam."
+
+    \subsubsection{Testing and Software Quality
+Assurance}\label{testing-and-software-quality-assurance}
+
+\paragraph{The Concept}\label{the-concept}
+
+"Software quality assurance (SQA) consists of a means of monitoring the
+software engineering processes and methods used to ensure quality. The
+methods by which this is accomplished are many and varied, and may
+include ensuring conformance to one or more standards, such as ISO 9000
+or a model such as CMMI.
+
+SQA encompasses the entire software development process, which includes
+processes such as requirements definition, software design, coding,
+source code control, code reviews, software configuration management,
+testing, release management, and product integration. SQA is organized
+into goals, commitments, abilities, activities, measurements, and
+verifications."
+(https://en.wikipedia.org/wiki/Software\_quality\_assurance)
+
+\begin{itemize}
+\item
+  This is a massively complex topic in Computer Science.
+\item
+  We do not have time to cover in any detail.
+\item
+  We will, however, think about the concepts and some general
+  guidelines.
+\item
+  My predominant rule of thumb is \textbf{follow} {[}\textbf{Gall's
+  Law}{]}(https://en.wikipedia.org/wiki/John\_Gall\_(author)
+\end{itemize}
+
+"A complex system that works is invariably found to have evolved from a
+simple system that worked. A complex system designed from scratch never
+works and cannot be patched up to make it work. You have to start over
+with a working simple system. -- John Gall (1975)
+
+    \paragraph{An Example}\label{an-example}
+
+Remember the 0-1 Knapsack Problem? The exact solution code is ...
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{from} \PY{n+nn}{itertools} \PY{k}{import} \PY{n}{combinations}
+        \PY{k+kn}{import} \PY{n+nn}{time}
+        
+        \PY{k}{def} \PY{n+nf}{anycomb}\PY{p}{(}\PY{n}{items}\PY{p}{)}\PY{p}{:}
+            \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ return combinations of any length from the items }\PY{l+s+s1}{\PYZsq{}}
+            \PY{k}{return} \PY{p}{(} \PY{n}{comb}
+                     \PY{k}{for} \PY{n}{r} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{items}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+                     \PY{k}{for} \PY{n}{comb} \PY{o+ow}{in} \PY{n}{combinations}\PY{p}{(}\PY{n}{items}\PY{p}{,} \PY{n}{r}\PY{p}{)}
+                     \PY{p}{)}
+         
+        \PY{k}{def} \PY{n+nf}{totalvalue}\PY{p}{(}\PY{n}{comb}\PY{p}{)}\PY{p}{:}
+            \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ Totalise a particular combination of items}\PY{l+s+s1}{\PYZsq{}}
+            \PY{n}{totwt} \PY{o}{=} \PY{n}{totval} \PY{o}{=} \PY{l+m+mi}{0}
+            \PY{k}{for} \PY{n}{item}\PY{p}{,} \PY{n}{wt}\PY{p}{,} \PY{n}{val} \PY{o+ow}{in} \PY{n}{comb}\PY{p}{:}
+                \PY{n}{totwt}  \PY{o}{+}\PY{o}{=} \PY{n}{wt}
+                \PY{n}{totval} \PY{o}{+}\PY{o}{=} \PY{n}{val}
+            \PY{k}{return} \PY{p}{(}\PY{n}{totval}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{totwt}\PY{p}{)} \PY{k}{if} \PY{n}{totwt} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{500} \PY{k}{else} \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Program/algorithm example input data. Real solution would get}
+        \PY{c+c1}{\PYZsh{} data from user input, file, etc.}
+        \PY{n}{items} \PY{o}{=} \PY{p}{(}
+            \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{map}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{,} \PY{l+m+mi}{150}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{compass}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{13}\PY{p}{,} \PY{l+m+mi}{35}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{water}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{153}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{sandwich}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{l+m+mi}{160}\PY{p}{)}\PY{p}{,}
+            \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{glucose}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{60}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{tin}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{68}\PY{p}{,} \PY{l+m+mi}{45}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{banana}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{27}\PY{p}{,} \PY{l+m+mi}{60}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{apple}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{39}\PY{p}{,} \PY{l+m+mi}{40}\PY{p}{)}\PY{p}{,}
+           \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{cheese}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{23}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{beer}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{52}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{suntan cream}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{,} \PY{l+m+mi}{70}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{camera}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{)}\PY{p}{,}
+            \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{t\PYZhy{}shirt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{24}\PY{p}{,} \PY{l+m+mi}{15}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{trousers}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{48}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{umbrella}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{73}\PY{p}{,} \PY{l+m+mi}{40}\PY{p}{)}\PY{p}{,}
+            \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{waterproof trousers}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{42}\PY{p}{,} \PY{l+m+mi}{70}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{waterproof overclothes}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{43}\PY{p}{,} \PY{l+m+mi}{75}\PY{p}{)}\PY{p}{,}
+            \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{note\PYZhy{}case}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{22}\PY{p}{,} \PY{l+m+mi}{80}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{sunglasses}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{towel}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{18}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{)}\PY{p}{,}
+            \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{socks}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{book}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{tent}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{matches}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{,}
+            \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{boots}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{flare}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{25}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mirror}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{)}
+            \PY{p}{)}
+        
+        \PY{n}{start} \PY{o}{=} \PY{n}{time}\PY{o}{.}\PY{n}{time}\PY{p}{(}\PY{p}{)}
+        \PY{n+nb}{print} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Time = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{start}\PY{p}{)}    
+        \PY{n}{bagged} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(} \PY{n}{anycomb}\PY{p}{(}\PY{n}{items}\PY{p}{)}\PY{p}{,} \PY{n}{key}\PY{o}{=}\PY{n}{totalvalue}\PY{p}{)} \PY{c+c1}{\PYZsh{} max val or min wt if values equal}
+        \PY{n}{done} \PY{o}{=} \PY{n}{time}\PY{o}{.}\PY{n}{time}\PY{p}{(}\PY{p}{)}
+        \PY{n}{elapsed}\PY{o}{=}\PY{n}{done}\PY{o}{\PYZhy{}}\PY{n}{start}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Done time =}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{done}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ elapsed = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{elapsed} \PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Bagged the following items}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{  }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+}
+              \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{  }\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n+nb}{sorted}\PY{p}{(}\PY{n}{item} \PY{k}{for} \PY{n}{item}\PY{p}{,}\PY{n}{\PYZus{}}\PY{p}{,}\PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n}{bagged}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        \PY{n}{val}\PY{p}{,} \PY{n}{wt} \PY{o}{=} \PY{n}{totalvalue}\PY{p}{(}\PY{n}{bagged}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{for a total value of }\PY{l+s+si}{\PYZpc{}i}\PY{l+s+s2}{ and a total weight of }\PY{l+s+si}{\PYZpc{}i}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{val}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{wt}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{itemize}
+\item
+  I would not write this program all at once.
+\item
+  I would start by writing two smaller programs to
+  \href{https://en.wikipedia.org/wiki/Unit_testing}{unit test} the
+  smaller functional units:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    anycomb function.
+  \item
+    totalvalue function.
+  \end{itemize}
+\end{itemize}
+
+\emph{Unit test anycomb:}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{from} \PY{n+nn}{itertools} \PY{k}{import} \PY{n}{combinations}
+        \PY{k+kn}{import} \PY{n+nn}{time}
+        
+        \PY{k}{def} \PY{n+nf}{anycomb}\PY{p}{(}\PY{n}{items}\PY{p}{)}\PY{p}{:}
+            \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ return combinations of any length from the items }\PY{l+s+s1}{\PYZsq{}}
+            \PY{k}{return} \PY{p}{(} \PY{n}{comb}
+                     \PY{k}{for} \PY{n}{r} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{items}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+                     \PY{k}{for} \PY{n}{comb} \PY{o+ow}{in} \PY{n}{combinations}\PY{p}{(}\PY{n}{items}\PY{p}{,} \PY{n}{r}\PY{p}{)}
+                     \PY{p}{)}
+        
+        \PY{n}{test\PYZus{}items} \PY{o}{=} \PY{p}{(}
+            \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{map}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{,} \PY{l+m+mi}{150}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{compass}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{13}\PY{p}{,} \PY{l+m+mi}{35}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{water}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{153}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n}{result} \PY{o}{=} \PY{n}{anycomb}\PY{p}{(}\PY{n}{test\PYZus{}items}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Result = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{o}{*}\PY{n}{result}\PY{p}{,} \PY{n}{sep}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    This is correct. I can manually verify for small input sets.
+
+Obviously, I would test more than once and with tricky combinations.
+
+    \emph{Unit test totalvalue:} BTW, not sure why the developer chose to
+return -total\_weight.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k}{def} \PY{n+nf}{totalvalue}\PY{p}{(}\PY{n}{comb}\PY{p}{)}\PY{p}{:}
+            \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ Totalise a particular combination of items}\PY{l+s+s1}{\PYZsq{}}
+            \PY{n}{totwt} \PY{o}{=} \PY{n}{totval} \PY{o}{=} \PY{l+m+mi}{0}
+            \PY{k}{for} \PY{n}{item}\PY{p}{,} \PY{n}{wt}\PY{p}{,} \PY{n}{val} \PY{o+ow}{in} \PY{n}{comb}\PY{p}{:}
+                \PY{n}{totwt}  \PY{o}{+}\PY{o}{=} \PY{n}{wt}
+                \PY{n}{totval} \PY{o}{+}\PY{o}{=} \PY{n}{val}
+            \PY{k}{return} \PY{p}{(}\PY{n}{totval}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{totwt}\PY{p}{)} \PY{k}{if} \PY{n}{totwt} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{500} \PY{k}{else} \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}
+        
+        \PY{n}{test1} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{map}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{,} \PY{l+m+mi}{150}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{water}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{153}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{totalvalue test 1 = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{totalvalue}\PY{p}{(}\PY{n}{test1}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    Finally, make sure you code checks for erroneous input.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{test2}\PY{o}{=}\PY{p}{(}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{map}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{900}\PY{p}{,} \PY{l+m+mi}{150}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{water}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{1100}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{totalvalue test 2 = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{totalvalue}\PY{p}{(}\PY{n}{test2}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    This appears to be a reasonable answer, despite the fact that - The
+maximum weight allowed is 500 - Water weighs 1100
+
+Fools will inevitably enter bad data or do something wrong.
+
+\emph{"It is impossible to make anything foolproof because fools are so
+ingenious."} Corollary to Murphy's Law.
+
+This may be true, but you need to try.
+
+BTW, there is also Smith's Law. \textbf{"Murphy was an optimist."}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
