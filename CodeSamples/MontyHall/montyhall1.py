@@ -6,6 +6,7 @@
 
 import argparse, random
 
+
 def simulate(num_doors, switch, verbose):
     """(int, bool): bool
 
