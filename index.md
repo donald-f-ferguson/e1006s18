@@ -58,6 +58,7 @@ viewing the HTML lectures are:
     - [Lecture 2: Variables, Objects, Types, Operators](./Lectures/e1006-L2-s2018-v3.html)
     - [Lecture 3: Types and Operators Continued, Testing](./Lectures/e1006-L3-s2018-Operators.html)
     - [Lecture 4: Control Flow and Functions - Corrected](./Lectures/e1006_L4_S2018_Control_Flow.html)
+    - [Lecture 5: Control Flow, HW 2](./Lectures/e1006_L5_S2018_Control_Flow_Algorithm.html)
 1. [CodeSamples](./CodeSamples) contains the same programs from lectures.
 1. [Data](./Data) contains SQL, CSV and other data files used in projects.
 1. [Notebooks](./Notebooks) contains the [Jupyter](http://jupyter.org/) Notebooks used
