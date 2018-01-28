@@ -16,7 +16,9 @@ def get_mu(d):
     return mu
 
 
-d1 = get_data('AMZN', '1/1/2000')
-m = get_mu(d1)
+d1 = get_data('AMZN', '1/1/2018')
+#m = get_mu(d1)
 
-print("Mu = ", m)
+#print("Mu = ", m)
+
+print(d1)

@@ -6,7 +6,7 @@ from scipy.stats import norm
 from pandas_datareader import data
 
 # download Apple price data into DataFrame
-apple = data.DataReader('AAPL', 'yahoo', start='1/1/2000')
+apple = data.DataReader('AAPL', 'yahoo', start='1/1/2016')
 
 # calculate the compound annual growth rate (CAGR) which
 # will give us our mean return input (mu)
@@ -18,6 +18,9 @@ mu = cagr
 # create a series of percentage returns and calculate
 # the annual volatility of returns
 apple['Returns'] = apple['Adj Close'].pct_change()
+
+apple.to_csv("./apple.csv")
+
 vol = apple['Returns'].std() * math.sqrt(252)
 print("Annual Volatility =", str(round(vol, 4) * 100) + "%")
 
