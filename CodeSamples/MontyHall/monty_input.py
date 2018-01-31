@@ -182,13 +182,13 @@ def print_configuration(test_config):
 # Some code that would/could be called from a controlling program is below.
 
 # Controlling program decided not to use command line arguments.
-test_config_1  = get_input()
-#test_config_1 = {
-#    "trials" : 1000,
-#    "doors" : 3,
-#    "verbose" : False,
-#    "update_frequency": 100
-#}
+#test_config_1  = get_input()
+test_config_1 = {
+   "trials" : 1000,
+    "doors" : 3,
+    "verbose" : False,
+    "update_frequency": 100
+}
 
 
 print_configuration(test_config_1)
