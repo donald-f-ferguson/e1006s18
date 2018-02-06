@@ -21,7 +21,7 @@ def random_set(probability, count):
     result = []
     
     for i in range(0,count):
-        event = random_event(probability)
+        event = biased_coin(probability)
         result.append(event)
         
     return result
