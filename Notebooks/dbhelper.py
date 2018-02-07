@@ -10,32 +10,37 @@ import json
 # Also, I do not want to allow anyone to access the database
 # and different people have different permissions. So, the
 # client must log on.
-config = {
-    'user': 'dbuser',
-    'password': 'dbuser',
-    'host': '10.0.1.4',
-    'database': 'lahman2016',
-    'raise_on_warnings': True,
-    'charset': 'utf8'
-}
 
 # Connect
-cnx = pymysql.connect(host='localhost',
-                      user = 'dbuser',
-                        password = 'dbuser',
-                  db = 'lahman2016',
-                       charset = 'utf8mb4',
-                                 cursorclass = pymysql.cursors.DictCursor)
+def get_connection():
+    cnx = pymysql.connect(host='localhost',
+                          user = 'dbuser',
+                          password = 'dbuser',
+                          db = 'lahman2016',
+                          charset = 'utf8mb4',
+                         cursorclass = pymysql.cursors.DictCursor)
+    cnx.autocommit(True)
+    return cnx
 
 
-def run_query(q):
+def run_query(q, result):
     print("Execution query = \n", q)
-    with cnx.cursor() as cursor:
-        # Create a new record
-        cursor.execute(q)
 
-    df_mysql = pd.read_sql(q, cnx)
-    return df_mysql
+    cnx = get_connection()
+
+    with cnx.cursor() as cursor:
+        cursor.execute(q)
+        cnx.commit()
+        cnx.close()
+
+    if (result):
+        cnx = get_connection()
+        df_mysql = pd.read_sql(q, cnx)
+        cnx.commit()
+        cnx.close()
+        return df_mysql
+    else:
+        return True
 
 
 def print_result(msg, pf):
@@ -43,15 +48,20 @@ def print_result(msg, pf):
     print(pf)
 
 
-def run_and_print_q(msg, q):
-    r = run_query(q)
+def run_and_print_q(msg, q, result):
+    r = run_query(q, result)
     print("\n", msg, "\n", r)
 
 
 def run_query_to_d(q):
+    cnx = get_connection()
     with cnx.cursor() as cursor:
         # Create a new record
         cursor.execute(q)
 
     r = cursor.fetchall()
+    cnx.close()
     return r
+
+
+#run_and_print_q("Hello", "INSERT INTO University.person (last_name, first_name) VALUES('Ferguson', 'Donald');", False)
