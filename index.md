@@ -61,7 +61,8 @@ viewing the HTML lectures are:
     - [Lecture 5: Control Flow, HW 2](./Lectures/e1006_L5_S2018_Control_Flow_Algorithm.html)
     - [Lecture 6: HW2, Projects and Algorithms](./Lectures/e1006_L6_S2018_HW2_Algorithms_V2.html)
     - [Lecture 7: Algorithms and Program Development](./Lectures/e1006_L7_S2018_Algorithms_and_Development.html)
-    - [Lecture 3: Strings and Lists](./Lectures/e1006_L8_S2018_Strings_and_Lists.html)
+    - [Lecture 8: Strings and Lists](./Lectures/e1006_L8_S2018_Strings_and_Lists.html)
+    - [Lecture 9: HW3 Preview, Functions, Files, Exceptions](./Lectures/e1006_L8_S2018_Strings_and_Lists.html)
 1. [CodeSamples](./CodeSamples) contains the same programs from lectures.
 1. [Data](./Data) contains SQL, CSV and other data files used in projects.
 1. [Notebooks](./Notebooks) contains the [Jupyter](http://jupyter.org/) Notebooks used
