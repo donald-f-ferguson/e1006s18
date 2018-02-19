@@ -63,6 +63,7 @@ viewing the HTML lectures are:
     - [Lecture 7: Algorithms and Program Development](./Lectures/e1006_L7_S2018_Algorithms_and_Development.html)
     - [Lecture 8: Strings and Lists](./Lectures/e1006_L8_S2018_Strings_and_Lists.html)
     - [Lecture 9: HW3 Preview, Functions, Files, Exceptions](./Lectures/e1006_L9_S2018_Functions_Files_HW3.html)
+    - [Lecture 10: Data Structures, Lists, Exceptions](./Lectures/e1006_L10_S2018_Exceptions_Lists.html)
 1. [CodeSamples](./CodeSamples) contains the same programs from lectures.
 1. [Data](./Data) contains SQL, CSV and other data files used in projects.
 1. [Notebooks](./Notebooks) contains the [Jupyter](http://jupyter.org/) Notebooks used
