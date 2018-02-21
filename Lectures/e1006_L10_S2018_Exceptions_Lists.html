@@ -11819,7 +11819,7 @@ $( document ).ready(function(){
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">html</span>
@@ -12062,7 +12062,7 @@ $( document ).ready(function(){
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Exception Hierarchy</strong></td>
+<td style="text-align:center"><strong>(Partial) Exception Hierarchy</strong></td>
 </tr>
 </tbody>
 </table>
@@ -13078,6 +13078,287 @@ def update_corrections(original_word, corrected_word):
 <img src="../images/chapter7/Slide28.jpg">
 <img src="../images/chapter7/Slide29.jpg">
 <img src="../images/chapter7/Slide30.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Some Examples</strong></p>
+<p><em>Sorting, Iterating, Joining</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define a test string.</span>
+<span class="n">str1</span><span class="o">=</span><span class="s2">&quot;quickbrownfox&quot;</span>
+
+<span class="c1"># A concise approach for expanding a string.</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">str1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The characters in str1 are: &quot;</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Sort the elements in the list.</span>
+<span class="n">l1</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorted list is &quot;</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert back to a string.</span>
+<span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Converted back to a string = &quot;</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The characters in str1 are:  [&#39;q&#39;, &#39;u&#39;, &#39;i&#39;, &#39;c&#39;, &#39;k&#39;, &#39;b&#39;, &#39;r&#39;, &#39;o&#39;, &#39;w&#39;, &#39;n&#39;, &#39;f&#39;, &#39;o&#39;, &#39;x&#39;] 
+
+Sorted list is  [&#39;b&#39;, &#39;c&#39;, &#39;f&#39;, &#39;i&#39;, &#39;k&#39;, &#39;n&#39;, &#39;o&#39;, &#39;o&#39;, &#39;q&#39;, &#39;r&#39;, &#39;u&#39;, &#39;w&#39;, &#39;x&#39;] 
+
+Converted back to a string =  bcfiknooqruwx
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Delimited Strings</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">line</span><span class="o">=</span><span class="s2">&quot;21-Feb-2018;13:10;E1006;415 SIPA&quot;</span>
+<span class="n">elements</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The individual elements are: &quot;</span><span class="p">,</span> <span class="n">elements</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The individual elements are:  [&#39;21-Feb-2018&#39;, &#39;13:10&#39;, &#39;E1006&#39;, &#39;415 SIPA&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Mutation</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elements still = &quot;</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">elements</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;E1006 - Introduction to Computing&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elements is now = &quot;</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Donald F. Ferguson&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elements is now = &quot;</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I popped &quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="s2">&quot;making elements = &quot;</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">+</span> <span class="n">elements</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I added the thing I popped and elements. Now = &quot;</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Note that I had to take the single element and make a list for addition.&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Elements still =  [&#39;21-Feb-2018&#39;, &#39;13:10&#39;, &#39;E1006&#39;, &#39;415 SIPA&#39;] 
+
+Elements is now =  [&#39;21-Feb-2018&#39;, &#39;13:10&#39;, &#39;E1006 - Introduction to Computing&#39;, &#39;415 SIPA&#39;] 
+
+Elements is now =  [&#39;21-Feb-2018&#39;, &#39;13:10&#39;, &#39;E1006 - Introduction to Computing&#39;, &#39;415 SIPA&#39;, &#39;Donald F. Ferguson&#39;] 
+
+I popped  Donald F. Ferguson making elements =  [&#39;21-Feb-2018&#39;, &#39;13:10&#39;, &#39;E1006 - Introduction to Computing&#39;, &#39;415 SIPA&#39;] 
+
+I added the thing I popped and elements. Now =  [&#39;Donald F. Ferguson&#39;, &#39;21-Feb-2018&#39;, &#39;13:10&#39;, &#39;E1006 - Introduction to Computing&#39;, &#39;415 SIPA&#39;] 
+
+Note that I had to take the single element and make a list for addition.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Manipulating a List</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d2</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I removed element at 1 = &quot;</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="s2">&quot; leaving list = &quot;</span><span class="p">,</span> <span class="n">elements</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I removed element at 1 =  21-Feb-2018  leaving list =  [&#39;Donald F. Ferguson&#39;, &#39;13:10&#39;, &#39;E1006 - Introduction to Computing&#39;, &#39;415 SIPA&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;mouse&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I have picked on elements enough. New list = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">del</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element at position 2 has gone to the void. x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;mouse&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I removed the element with value &#39;mouse. x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Is there another &#39;mouse?&#39; If so, remove it.&quot;</span><span class="p">)</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;mouse&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">ve</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Got a value error. There were no mice.&quot;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After attempting mouse extraction, x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Where is the cat?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The cat is at &quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Transfiguring &#39;cat&#39; to &#39;mouse.&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)]</span><span class="o">=</span><span class="s1">&#39;mouse&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cats follow mice.&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;mouse&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thus, x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I have picked on elements enough. New list =  [0, 1, 2, &#39;mouse&#39;, 4, 5, 6, &#39;cat&#39;, 8, 9] 
+
+Element at position 2 has gone to the void. x =  [0, 1, &#39;mouse&#39;, 4, 5, 6, &#39;cat&#39;, 8, 9] 
+
+I removed the element with value &#39;mouse. x =  [0, 1, 4, 5, 6, &#39;cat&#39;, 8, 9] 
+
+Is there another &#39;mouse?&#39; If so, remove it.
+Got a value error. There were no mice.
+After attempting mouse extraction, x =  [0, 1, 4, 5, 6, &#39;cat&#39;, 8, 9] 
+
+Where is the cat?
+The cat is at  5 
+
+Transfiguring &#39;cat&#39; to &#39;mouse.
+x =  [0, 1, 4, 5, 6, &#39;mouse&#39;, 8, 9] 
+
+cats follow mice.
+Thus, x =  [0, 1, 4, 5, 6, &#39;mouse&#39;, &#39;cat&#39;, 8, 9]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>How do you learn all of this and understand how to use it?</em></p>
+<p>The same way you get to Carnegie Hall. Practice.</p>
 
 </div>
 </div>
