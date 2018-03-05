@@ -4,6 +4,11 @@ import numpy as np
 
 
 def compute_relative_changes(a_list):
+    """
+    Computes the relative change between entries i and i+1 in a list.
+    :param a_list: A list of numbers.
+    :return: A list containing the relative changes.
+    """
     result = []
 
     for i in range(1,len(a_list)):
