@@ -13,7 +13,7 @@ trading_years_lbound = 0
 trading_years_ubound = 1000
 bins_ubound = 20
 bins_lbound = 10
-valid_y_n = ["Y", "N"]
+valid_y_n = ["Y", "N", "y", "n"]
 valid_tickers = ["AAPL", "GOOG", "AMZN"]
 
 general_patience = 2
@@ -155,7 +155,7 @@ def get_args():
                             help='Number of random years to simulate.')
         parser.add_argument('--bins', default=20, type=int, metavar='int',
                             help='Number of bins for return histogram')
-        parser.add_argument('--plot_to_file', default="no", type=str, metavar='str',
+        parser.add_argument('--plot_to_file', default="N", type=str, metavar='str',
                             help='Write charts to file?')
         parser.add_argument('--simulation_label', default="default", type=str, metavar='str',
                             help='Label for simulation.')
