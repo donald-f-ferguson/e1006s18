@@ -66,6 +66,7 @@ viewing the HTML lectures are:
     - [Lecture 10: Data Structures, Lists, Exceptions](./Lectures/e1006_L10_S2018_Exceptions_Lists.html)
     - [Lecture 11: More on Functions](./Lectures/e1006_L11_S2018_More_on_Functions.html)
     - [Lecture 12: Sample Midterm Discussion](./Lectures/midterm-sample.html)
+    - [Lecture 13: Dictionaries](./Lectures/e1006_L12_S2018_Dictionaries.html)
 1. [CodeSamples](./CodeSamples) contains the same programs from lectures.
 1. [Data](./Data) contains SQL, CSV and other data files used in projects.
 1. [Notebooks](./Notebooks) contains the [Jupyter](http://jupyter.org/) Notebooks used
