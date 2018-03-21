@@ -34,7 +34,7 @@ def compute_mean(a_list):
     for i in range(0,len(a_list)):
         total = total + a_list[i]
 
-    result = total / (len(a_list))
+    result = total / (len(a_list)+1)
     return result
 
 

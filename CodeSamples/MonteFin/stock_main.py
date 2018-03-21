@@ -192,6 +192,7 @@ def get_args():
 # Plots the yearly returns
 # If n is not none, this is the file to plot to.
 def year_plot(yy,n):
+    plt.figure(figsize=(20, 10))
     for i in range(0, len(yy)):
         plt.plot(yy[i])
 
@@ -213,6 +214,7 @@ def histo_return(yy, b, n):
         r.append(t)
 
 #    print(r)
+    plt.figure(figsize=(20, 10))
     plt.hist(r,b)
     if n is not None:
         plt.savefig(n)
@@ -239,12 +241,6 @@ def run_simulation(args):
     histo_return(result, args['bins'], fh)
 
     return result
-
-
-
-
-
-    return True
 
 
 # This module should/could be callable from other main programs. The other main programs may pass in parameters.

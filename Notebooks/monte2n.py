@@ -1,6 +1,6 @@
 import pandas as pd
-import sim_utils
-import numpy as np
+
+import sim_utilsn
 
 _file_suffix = ".csv"
 '''
@@ -12,7 +12,7 @@ The underscore sort of means "private to this module."
 
 def get_data_from_ticker(ticker):
     f_name = ticker + _file_suffix
-    r = sim_utils.get_data_from_file(f_name)
+    r = sim_utilsn.get_data_from_file(f_name)
     r = pd.read_csv(f_name, delimiter=",")
     return r
 
@@ -21,14 +21,14 @@ def next_price(p, mu, sigma):
     r = np.random.normal(0,1)
 
     delta_p = mu*p + r*sigma*p
-    result = p + delta_p
+    p = p + delta_p
 
-    return result
+    return p
 
 
 def generate_random_year(start_p, mu, sigma, days):
     result = []
-    for j in range(0,days):
+    for j in range(0,days-1):
         start_p = next_price(start_p, mu, sigma)
         result.append(start_p)
 
@@ -36,11 +36,11 @@ def generate_random_year(start_p, mu, sigma, days):
 
 
 def run_simulations(ticker, days, years):
-    df = get_data_from_ticker(ticker)
+    df = get_data_from_file(ticker)
     prices = df['Adj Close']
-    relative_changes = sim_utils.compute_relative_changes(prices)
-    mu = sim_utils.compute_mean(relative_changes)
-    sigma = sim_utils.compute_std_deviation(mu, relative_changes)
+    relative_changes = compute_relative_changes(prices)
+    mu = compute_mean(relative_changes)
+    sigma = compute_std_deviation(mu, relative_changes)
     start_p = float(prices.tail(1))
     print("Mu = ", mu)
     print("Sigma = ", sigma)
