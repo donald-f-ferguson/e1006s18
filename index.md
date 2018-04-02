@@ -68,10 +68,12 @@ viewing the HTML lectures are:
     - [Lecture 12: Sample Midterm Discussion](./Lectures/midterm-sample.html)
     - [Lecture 13: Dictionaries](./Lectures/e1006_L12_S2018_Dictionaries.html)
     - [Lecture 14: HW2 Solution](./Lectures/e1006_HW2_solution/e1006_HW2_solution.html)
+    - [Lecture 15: HW3 Solution](./Lectures/e1006_L13_S2018_HW3_Iter_HW4.html)
+    - [lecture 16: Web App, OOP](./Lectures/e1006_L14_S2018_OOP.html)
 1. [CodeSamples](./CodeSamples) contains the same programs from lectures.
 1. [Data](./Data) contains SQL, CSV and other data files used in projects.
 1. [Notebooks](./Notebooks) contains the [Jupyter](http://jupyter.org/) Notebooks used
 for lectures.
-
+ 
 More to come
   
