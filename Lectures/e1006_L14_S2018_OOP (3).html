@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>e1006_L15_S2018_OOP-Continues</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>e1006_L14_S2018_OOP</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11833,14 +11833,43 @@ $( document ).ready(function(){
 <p><h1 style="display:none;"></p>
 <p><h1 style="display:none;"></p>
 <p><h1 style="display:none;"></p>
-<p><h1 style="display:none;"></p>
 <h1 style="display:none;">
 
-
-<h1>Introduction to Computing for Engineers and Computer Scientists<BR><BR>Continuing with OO</h1>
+<h1>Introduction to Computing for Engineers and Computer Scientists<BR><BR>Intro to Object Oriented Programming</h1>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>__main__
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -11854,258 +11883,24 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Continuing-with-Textbook">Continuing with Textbook<a class="anchor-link" href="#Continuing-with-Textbook">&#182;</a></h2><p><img src="../images/chapter11/Slide27.jpg">
-<img src="../images/chapter11/Slide28.jpg">
-<img src="../images/chapter11/Slide29.jpg">
-<img src="../images/chapter11/Slide30.jpg"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../images/chapter11/Slide31.jpg">
-<img src="../images/chapter11/Slide32.jpg">
-<img src="../images/chapter11/Slide33.jpg">
-<img src="../images/chapter11/Slide34.jpg">
-<img src="../images/chapter11/Slide35.jpg"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../images/chapter11/Slide36.jpg"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Copyright 2017, 2013, 2011 Pearson Education, Inc., W.F. Punch &amp; R.J.Enbody</span>
-
-<span class="k">class</span> <span class="nc">MyClass</span> <span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="n">class_attribute</span> <span class="o">=</span> <span class="s1">&#39;world&#39;</span>
-
-    <span class="k">def</span> <span class="nf">my_method</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param1</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">hello </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">param1</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The object that called this method is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span>\
-              <span class="nb">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">instance_attribute</span> <span class="o">=</span> <span class="n">param1</span>
-
-
-<span class="n">my_instance</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;output of dir(my_instance):&quot;</span><span class="p">)</span>
-<span class="n">dir1</span> <span class="o">=</span> <span class="nb">dir</span><span class="p">(</span><span class="n">my_instance</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">my_instance</span><span class="p">))</span>
-<span class="n">my_instance</span><span class="o">.</span><span class="n">my_method</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">)</span>            <span class="c1"># adds the instance_attribute</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Instance has new attribute with value: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span>\
-      <span class="nb">format</span><span class="p">(</span><span class="n">my_instance</span><span class="o">.</span><span class="n">instance_attribute</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;output of dir(my_instance):&quot;</span><span class="p">)</span>
-<span class="n">dir2</span> <span class="o">=</span> <span class="nb">dir</span><span class="p">(</span><span class="n">my_instance</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">my_instance</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>output of dir(my_instance):
-[&#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dict__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;__weakref__&#39;, &#39;class_attribute&#39;, &#39;my_method&#39;]
-
-hello world
-The object that called this method is: &lt;__main__.MyClass object at 0x1097bd588&gt;
-Instance has new attribute with value: world
-output of dir(my_instance):
-[&#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dict__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;__weakref__&#39;, &#39;class_attribute&#39;, &#39;instance_attribute&#39;, &#39;my_method&#39;]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>That printout was not helpful.</li>
+<h2 id="A-Diversions-$-$-Graphical-User-Interface-versus-Command-Line-Interface">A Diversions $-$ Graphical User Interface versus Command Line Interface<a class="anchor-link" href="#A-Diversions-$-$-Graphical-User-Interface-versus-Command-Line-Interface">&#182;</a></h2><h3 id="Overview">Overview<a class="anchor-link" href="#Overview">&#182;</a></h3><ul>
+<li>Web based interfaces $-$ Punch and Enbody<ul>
+<li>Appendix E</li>
+<li>Sections 4.9, 6.8, 7.13, 9.10, 10.7, 15.7</li>
 </ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">That examples was a little confusing.&quot;</span><span class="p">)</span>
-<span class="n">c1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">dir1</span><span class="p">)</span>
-<span class="n">c2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">dir2</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The difference in the directory before/after are: &quot;</span><span class="p">,</span> <span class="n">c2</span><span class="o">-</span><span class="n">c1</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-
-That examples was a little confusing.
-The difference in the directory before/after are:  {&#39;instance_attribute&#39;}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>You can also do some interesting things.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">delta</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">c2</span><span class="o">-</span><span class="n">c1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The values of the new attributes are: &quot;</span><span class="p">)</span>
-<span class="n">v</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">my_instance</span><span class="p">,</span><span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">delta</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The values of the new attributes are: 
-{&#39;instance_attribute&#39;: &#39;world&#39;}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../images/chapter11/Slide38.jpg">
-<img src="../images/chapter11/Slide39.jpg">
-<img src="../images/chapter11/Slide40.jpg"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../images/chapter11/Slide41.jpg">
-<img src="../images/chapter11/Slide42.jpg">
-<img src="../images/chapter11/Slide43.jpg"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Jumping-Ahead/Preparing-for-HW-5">Jumping Ahead/Preparing for HW 5<a class="anchor-link" href="#Jumping-Ahead/Preparing-for-HW-5">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Operator-Overloading">Operator Overloading<a class="anchor-link" href="#Operator-Overloading">&#182;</a></h4><ul>
-<li>One of the really cool features of Python is <strong>operator overloading,</strong> which is extremely useful for scientific and engineering applications. Much of Pandas and Numpy would be awkward and different without this capability.</li>
-</ul>
-<p><img src="../images/chapter12/Slide14.jpg">
-<img src="../images/chapter12/Slide15.jpg">
-<img src="../images/chapter12/Slide16.jpg">
-<img src="../images/chapter12/Slide17.jpg">
-<img src="../images/chapter12/Slide18.jpg">
-<img src="../images/chapter12/Slide19.jpg"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Abstract-Types">Abstract Types<a class="anchor-link" href="#Abstract-Types">&#182;</a></h4><ul>
-<li>We will see that there are libraries that introduce Color as a class.</li>
+</li>
 </ul>
 <ul>
-<li>We are going to do a simple example to understand the concept of an abstract type as a class.</li>
-</ul>
-<ul>
-<li>There is a simple table that defines <code>color1 + color2</code></li>
+<li>There are many other types of GUI, e.g. mobile UI, complex graphical interaction, etc.</li>
 </ul>
 <table>
 <thead><tr>
-<th style="text-align:center"><img src="../images/rgb.png"></th>
+<th style="text-align:center"><img src="../images/cli-gui.jpeg"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Red, Green, Blue, Black</strong></td>
+<td style="text-align:center"><strong>GUI versus CLI</strong></td>
 </tr>
 </tbody>
 </table>
@@ -12113,91 +11908,931 @@ The difference in the directory before/after are:  {&#39;instance_attribute&#39;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Punch and Embody (textbook) has small sections on <em>graphical user interface,</em> e.g. section 4.9, 7.13, 9.10.</li>
+</ul>
+<ul>
+<li>GUI concept<br><br>
+  "The graphical user interface (GUI), is a type of user interface that allows users to interact with electronic devices through graphical icons and visual indicators such as secondary notation, instead of text-based user interfaces, typed command labels or text navigation. GUIs were introduced in reaction to the perceived steep learning curve of command-line interfaces (CLIs), which require commands to be typed on a computer keyboard." (<a href="https://en.wikipedia.org/wiki/Graphical_user_interface">https://en.wikipedia.org/wiki/Graphical_user_interface</a>)</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The command line (terminal window) is an evolution of (video) <a href="https://en.wikipedia.org/wiki/Computer_terminal">computer terminal.</a></li>
+</ul>
+<ul>
+<li>The video computer terminal was a significant improvement over the prior technology -- <a href="https://en.wikipedia.org/wiki/Punched_card_input/output">punched cards.</a></li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center"><img src="../images/terminal.jpeg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Terminal and Punched Card</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>When I was your age, I had to walk up hill (both ways), in the snow to ask the rich kids if I could use their computer terminal.</li>
+</ul>
+<ul>
+<li>All of the <code>print("text {&lt;3: } text", x)</code>  formatting stuff for print statements you see in the textbook is primarily for CLIs.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Native-Interface,-Web-Interface,-Hybrid,-and-the-Course-TextBook">Native Interface, Web Interface, Hybrid, and the Course TextBook<a class="anchor-link" href="#Native-Interface,-Web-Interface,-Hybrid,-and-the-Course-TextBook">&#182;</a></h3><table>
+<thead><tr>
+<th style="text-align:center"><img src="../images/native-mobile.jpg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://www.ibm.com/support/knowledgecenter/SSZH4A_5.0.5/com.ibm.worklight.help.doc/devref/Pictures/app_types.jpg"><strong>Browser and Native Applications</strong></a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Modern graphical user interfaces fall into a few categories<ul>
+<li>Browser based: Application runs in the browser and loads content.</li>
+<li>Native: All code, graphical elements, etc. are on the system in system specific code.</li>
+<li>Mixed/Hybrid</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th style="text-align:center"><img src="../images/native-mobile-2.jpg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://www.designzzz.com/wp-content/uploads/2015/05/native_apps_or_web_apps_infographic.jpg"><strong>Browser versus Native Applications</strong></a></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The GUI examples in the textbook are browser applications.<ul>
+<li>The web server runs all of the code.</li>
+<li>Generates HTML that the browser renders, including any application data.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center"><img src="../images/book-gui.jpeg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Textbook GUI Samples</strong></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>This approach is dated.<ul>
+<li>All application logic executes on "the server" and the browser just "renders."</li>
+<li>The application is aware of the GUI and technology.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>More modern web applications take a different approach.<ul>
+<li>The back-end application surfaces a callable API, e.g. check_word from HW3.</li>
+<li>There is significant application code, usually in JavaScript, running in the browser.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center"><img src="../images/mvc.jpeg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Web Model-View-Controller (MVC)</strong></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>I want to give you some experience with modern web applications.</li>
+</ul>
+<ul>
+<li>The version of the HW3 UI I have been building<ul>
+<li>Has very simple functionality</li>
+<li>But pulls in a lot of enabling technology, e.g.<ul>
+<li><a href="https://angularjs.org/">Angular JS</a></li>
+<li>[Material Design Lite] (<a href="https://getmdl.io/">https://getmdl.io/</a>)</li>
+<li>Some pretty large, complicated HTML and CSS files.</li>
+</ul>
+</li>
+<li>And getting Flask set up to deliver these is relatively simple for me, but you would probably not enjoy it much.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center"><img src="../images/hw3-gui.jpeg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>HW3 GUI</strong></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>So, we will go with something simpler, less visually appealing but that demonstrates the concepts.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Simplified-HW3-GUI">Simplified HW3 GUI<a class="anchor-link" href="#Simplified-HW3-GUI">&#182;</a></h3><h4 id="Overview">Overview<a class="anchor-link" href="#Overview">&#182;</a></h4><table>
+<thead><tr>
+<th style="text-align:center"><img src="../images/hw3-ui-simple.jpeg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Simplified HW3 GUI</strong></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Appendix E explains <a href="http://flask.pocoo.org/"><strong>Python Flask</strong></a></li>
+</ul>
+<ul>
+<li>Flask is a micro web framework written in Python (<a href="https://en.wikipedia.org/wiki/Flask_(web_framework">https://en.wikipedia.org/wiki/Flask_(web_framework</a>))</li>
+</ul>
+<ul>
+<li>A web framework (WF) or web application framework (WAF) is a software framework that is designed to support the development of web applications including web services, web resources, and web APIs. Web frameworks provide a standard way to build and deploy web applications. Web frameworks aim to automate the overhead associated with common activities performed in web development. For example, many web frameworks provide libraries for database access, templating frameworks, and session management, and they often promote code reuse. Although they often target development of dynamic web sites, they are also applicable to static websites. (<a href="https://en.wikipedia.org/wiki/Web_framework">https://en.wikipedia.org/wiki/Web_framework</a>)</li>
+</ul>
+<ul>
+<li><a href="https://www.djangoproject.com/">Django</a> is more powerful and equally popular Python web framework.</li>
+</ul>
+<ul>
+<li>A lot of the projects I led at IBM, e.g. J2EE, WebSphere, started and evolved from web frameworks.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Web-Application">Web Application<a class="anchor-link" href="#Web-Application">&#182;</a></h4><ul>
+<li><p>There are a lot of tutorials in addition to the textbook. Images below are from <a href="https://medium.com/@rchang/learning-how-to-build-a-web-application-c5499bd15c8f">Learning How to Build a Web Application</a></p>
+</li>
+<li><p>Basic concept</p>
+</li>
+</ul>
+<table>
+<thead><tr>
+<th><img src="../images/flask1.png"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Web Application Overview</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>More detail</li>
+</ul>
+<table>
+<thead><tr>
+<th><img src="../images/flask2.jpeg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Web Application Architecture</strong></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Our-(Your)-Implementation">Our (Your) Implementation<a class="anchor-link" href="#Our-(Your)-Implementation">&#182;</a></h4><ul>
+<li>We will not use the Flask HTML templates or Flask controller model (code list 4.5, pp 230, 231)</li>
+</ul>
+
+<pre><code># html page is the view.
+page = '''
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt; Palindrome Calculation&lt;/title&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;h1&gt;Check if a String is a Palindrome&lt;/h1&gt;
+
+      &lt;form method=post action=""&gt;
+         Hello String Fans!
+      &lt;br&gt;
+      Enter a string
+         {{ template_form.text_field }}
+      &lt;br&gt;
+         {% if result != None %}
+            {{ result }}
+         {% endif %}
+      &lt;br&gt;
+        &lt;input type=submit value=calculate&gt;
+      &lt;/form&gt;
+
+   &lt;/body&gt;
+&lt;/html&gt;
+'''
+
+# InputForm and below is our controller
+
+# form with a single TextField
+class InputForm(Form):
+    text_field = TextField(validators=[validators.InputRequired()])
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    palindrome_result = None
+    form = InputForm(request.form)
+    if request.method == 'POST' and form.validate():
+        input_val = form.text_field.data
+        palindrome_result = compute(input_val)
+    return render_template_string(page, template_form=form, result = palindrome_result)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Optional-Homework-GUIs-$-$-Structure">Optional Homework GUIs $-$ Structure<a class="anchor-link" href="#Optional-Homework-GUIs-$-$-Structure">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th style="text-align:center"><img src="../images/extra_credit_2.jpeg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Extra Credit Assignment 2: Structure</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>You will need to install <a href="https://pypi.python.org/pypi/Flask/0.12.2">Flask</a> for this project.<ul>
+<li>You can install via <code>pip install flask</code></li>
+<li>You may have to install via <code>conda install flask</code> if Anaconda is your primary Python environment.</li>
+<li>There is an overview of Flask in Appendix E of Punch and Enbody.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>I have uploaded a zip file containing the starting files for the extra-credit assignment.<ul>
+<li>/web/static contains the UI code that executes in the browser.<ul>
+<li>Embedded images.</li>
+<li>HTML page that defines and lays out the UI page.</li>
+<li>CSS styles that customizes appearance of HTML elements, e.g. font color, size, layout options, etc.</li>
+<li>JavaScript, AngularJS controller that integrates view layer with backend web application.</li>
+</ul>
+</li>
+<li>first_web_app.py: Python layer that accepts and routes REST web API requests.</li>
+<li>unit_test.py: Unit tests application layer.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>You will implement and integrate the <em>application layer</em> and <em>data access/database layer.</em><ul>
+<li>The core of the extra credit assignment is your HW3 code that implements the application layer.<ul>
+<li>Separate, callable Python file.</li>
+<li>Two functions that the web integration layer calls.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<pre><code>##############################################################################################################
+# These are the two functions you will write.
+# You will implement in a separate Python file and access via an import statement.
+
+# 1. Check a dictionary to determine if word is correctly spelled.
+# 2. If not, call a set of functions that generate "near by, correctly spelled words."
+def check_word(word):
+    return correct_functions.check_and_suggest_word(word)
+
+
+# The user selected a correction, or entered a new correct spelling.
+# We will record the correct spelling and score as a possible common correction for user.
+def update_corrections(original_word, corrected_word):
+    # Your code goes here.
+    return correct_functions.update_corrections(original_word, corrected_word)
+
+# End of where your code will go.
+##############################################################################################################</code></pre>
+<ul>
+<li>Data layer<ul>
+<li>The "database" with be the dictionary.csv file.</li>
+<li>You will separate dictionary load/read/update/save code into a separate dictionary_data.py file. The correct_functions file (module) will call the DB interface code.</li>
+<li>This implements the <em>Data Access Object Pattern.</em><ul>
+<li>This is "historically" a J2EE pattern, but the concept applies in general.</li>
+<li>Allows database engine and format to evolve without impacting application logic.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th style="text-align:center"><img src="../images/dao.jpg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://www.geeksforgeeks.org/data-access-object-pattern/"><strong>Data Access Object Pattern</strong></a></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>BusinessObject : The BusinessObject represents the data client. It is the object that requires access to the data source to obtain and store data. This is the <code>correction_functions.py</code> code in your program.</li>
+</ul>
+<ul>
+<li>DataAccessObject : The DataAccessObject is the primary object of this pattern. The DataAccessObject abstracts the underlying data access implementation for the BusinessObject to enable transparent access to the data source. This is the <code>dictionary_data.py</code> file in your implementation.</li>
+</ul>
+<ul>
+<li>DataSource : This represents a data source implementation. A data source could be a database such as an RDBMS, OODBMS, XML repository, flat file system, and so forth. A data source can also be another system service or some kind of repository. This is the file system, CSV reader/writer in your example. <strong>I will later demonstrate switching to the extra credit 1 dictionary implementation, and switching to a relational databases FYI.</strong></li>
+</ul>
+<ul>
+<li>TransferObject : This represents a Transfer Object used as a data carrier. The DataAccessObject may use a Transfer Object to return data to the client (application BO). The DataAccessObject may also receive the data from the client (application BO) in a Transfer Object to update the data in the data source. This is simply the dictionary entry in your implementation.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Demo-and-Code-Walk-through">Demo and Code Walk-through<a class="anchor-link" href="#Demo-and-Code-Walk-through">&#182;</a></h4><p><strong>Note:</strong> Source code is in zip file.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Demo<ul>
+<li>User Interface</li>
+<li>REST API</li>
+</ul>
+</li>
+</ul>
+<p><strong>Web Application:</strong></p>
+
+<pre><code>- Line-by-line walk-through.
+- This is quick, dirty and too simple.
+- We may find bugs or changes I need to make.</code></pre>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MyColor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Copyright 2017, 2013, 2011 Pearson Education, Inc., W.F. Punch &amp; R.J.Enbody</span>
+<span class="c1"># Modified by Donald F. Ferguson, Columbia University, 2018</span>
 
-    <span class="n">__rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">red</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">green</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span> <span class="o">=</span> <span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">)</span>
+<span class="c1"># Import some frameworks that help us implement a web application.</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="k">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">make_response</span>
 
-    <span class="k">def</span> <span class="nf">__get_color_map_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">g</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="kn">import</span> <span class="nn">string</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">g</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+<span class="c1"># The external file that implements my check and track correction functions.</span>
+<span class="kn">import</span> <span class="nn">correct_functions_new</span> <span class="k">as</span> <span class="nn">correct_functions</span>
+<span class="kn">import</span> <span class="nn">json</span>
 
-        <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">d</span>
 
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Color: </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__get_color_map_names</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_color_name</span><span class="p">())</span>
-        <span class="k">return</span> <span class="n">result</span>
+<span class="c1">##############################################################################################################</span>
+<span class="c1"># These are the two functions you will write.</span>
+<span class="c1"># You will implement in a separate Python file and access via an import statement.</span>
 
-    <span class="k">def</span> <span class="nf">__get_color_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="c1"># 1. Check a dictionary to determine if word is correctly spelled.</span>
+<span class="c1"># 2. If not, call a set of functions that generate &quot;near by, correctly spelled words.&quot;</span>
+<span class="k">def</span> <span class="nf">check_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">correct_functions</span><span class="o">.</span><span class="n">check_and_suggest_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
 
-        <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span>
 
-        <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">):</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
-        <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
-        <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">):</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
-        <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
-        <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">):</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;yellow&quot;</span>
-        <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;magenta&quot;</span>
-        <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;cyan&quot;</span>
-        <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;UNDEFINED&quot;</span>
+<span class="c1"># The user selected a correction, or entered a new correct spelling.</span>
+<span class="c1"># We will record the correct spelling and score as a possible common correction for user.</span>
+<span class="k">def</span> <span class="nf">update_corrections</span><span class="p">(</span><span class="n">original_word</span><span class="p">,</span> <span class="n">corrected_word</span><span class="p">):</span>
+    <span class="c1"># Your code goes here.</span>
+    <span class="k">return</span> <span class="n">correct_functions</span><span class="o">.</span><span class="n">update_corrections</span><span class="p">(</span><span class="n">original_word</span><span class="p">,</span> <span class="n">corrected_word</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">result</span>
+<span class="c1"># End of where your code will go.</span>
+<span class="c1">##############################################################################################################</span>
 
-    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="n">temp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span><span class="p">)</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span><span class="p">)):</span>
-            <span class="n">temp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">__rgb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">temp</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
 
-        <span class="n">result</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">MyColor</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">result</span>
+<span class="c1">#</span>
+<span class="c1"># The main running program is the Flask application engine.</span>
+<span class="c1"># We register URL endpoint functions below.</span>
+<span class="c1"># There are some static content directories for serving HTML, CSS, JavaScript, etc.</span>
+<span class="c1">#</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span>
+            <span class="n">static_url_path</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+            <span class="n">static_folder</span><span class="o">=</span><span class="s1">&#39;web/static&#39;</span><span class="p">,</span>
+            <span class="n">template_folder</span><span class="o">=</span><span class="s1">&#39;web/templates&#39;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="n">temp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span><span class="p">)</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span><span class="p">)):</span>
-            <span class="n">temp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">__rgb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
 
-        <span class="n">result</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">MyColor</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">result</span>
+<span class="c1">#</span>
+<span class="c1"># Implements the path /api/check</span>
+<span class="c1"># The only web method is GET.</span>
+<span class="c1"># The query parameters are: word=xxx, where xxx is the word to check.</span>
+<span class="c1">#</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/api/check&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">api_check</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;input = &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input word = &quot;</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rgb</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">__rgb</span>
-        <span class="k">return</span> <span class="n">result</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">check_word</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;check_word rsp = &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">rsp</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;CORRECT&quot;</span><span class="p">})</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">make_response</span><span class="p">(</span><span class="n">rsp</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">rsp</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span> <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;INCORRECT&quot;</span><span class="p">,</span> <span class="s2">&quot;original&quot;</span><span class="p">:</span> <span class="n">w</span><span class="p">,</span> <span class="s2">&quot;suggestions&quot;</span><span class="p">:</span> <span class="n">result</span> <span class="p">})</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rsp = &quot;</span><span class="p">,</span> <span class="n">rsp</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">make_response</span><span class="p">(</span><span class="n">rsp</span><span class="p">)</span>
+
+    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
+
+    <span class="k">return</span> <span class="n">response</span>
+
+
+<span class="c1">#</span>
+<span class="c1"># Implements the path /api/check</span>
+<span class="c1"># The only web method is POST.</span>
+<span class="c1"># The body is JSON and has two elements:</span>
+<span class="c1"># 1. original_word: the word the user checked.</span>
+<span class="c1"># 2. corrected_word: the word the user submitted as a correction.</span>
+<span class="c1">#</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/api/correct&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">api_correct</span><span class="p">():</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d = &quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+
+    <span class="n">w</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;original_word&#39;</span><span class="p">]</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;corrected_word&#39;</span><span class="p">]</span>
+
+    <span class="c1">#print(&quot;original = &quot; + w)</span>
+    <span class="c1">#print(&quot;corrected = &quot; + c)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">update_corrections</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+    <span class="n">rsp</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;msg&quot;</span><span class="p">:</span> <span class="n">result</span> <span class="p">}</span>
+    <span class="n">bar</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">rsp</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">make_response</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;returning&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>HTML UI File</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">&lt;!</span>DOCTYPE html&gt;
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+       <span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;viewport&quot;</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;width=device-width, initial-scale=1&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">style</span><span class="o">&gt;</span>
+        <span class="o">*</span> <span class="p">{</span>
+            <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="p">:</span> <span class="n">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="o">/*</span> <span class="n">Create</span> <span class="n">two</span> <span class="n">equal</span> <span class="n">columns</span> <span class="n">that</span> <span class="n">floats</span> <span class="nb">next</span> <span class="n">to</span> <span class="n">each</span> <span class="n">other</span> <span class="o">*/</span>
+        <span class="o">.</span><span class="n">column</span> <span class="p">{</span>
+            <span class="nb">float</span><span class="p">:</span> <span class="n">left</span><span class="p">;</span>
+            <span class="n">width</span><span class="p">:</span> <span class="mi">50</span><span class="o">%</span><span class="p">;</span>
+            <span class="n">padding</span><span class="p">:</span> <span class="mi">10</span><span class="n">px</span><span class="p">;</span>
+            <span class="n">height</span><span class="p">:</span> <span class="mi">500</span><span class="n">px</span><span class="p">;</span> <span class="o">/*</span> <span class="n">Should</span> <span class="n">be</span> <span class="n">removed</span><span class="o">.</span> <span class="n">Only</span> <span class="k">for</span> <span class="n">demonstration</span> <span class="o">*/</span>
+        <span class="p">}</span>
+
+        <span class="o">/*</span> <span class="n">Clear</span> <span class="n">floats</span> <span class="n">after</span> <span class="n">the</span> <span class="n">columns</span> <span class="o">*/</span>
+        <span class="o">.</span><span class="n">row</span><span class="p">:</span><span class="n">after</span> <span class="p">{</span>
+            <span class="n">content</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+            <span class="n">display</span><span class="p">:</span> <span class="n">table</span><span class="p">;</span>
+            <span class="n">clear</span><span class="p">:</span> <span class="n">both</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="o">&lt;/</span><span class="n">style</span><span class="o">&gt;</span>
+
+        <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">HW3</span><span class="p">:</span> <span class="n">The</span> <span class="n">Spelling</span> <span class="n">Correction</span> <span class="n">Suggester</span><span class="o">!</span>&lt;/title&gt;
+
+        <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+            <span class="n">function</span> <span class="n">myFunction</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">var</span> <span class="n">x</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">&quot;told_you_so&quot;</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">display</span> <span class="o">===</span> <span class="s2">&quot;none&quot;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">x</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">x</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;checkctl.js&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">ng</span><span class="o">-</span><span class="n">app</span><span class="o">=</span><span class="s2">&quot;myApp&quot;</span> <span class="n">ng</span><span class="o">-</span><span class="n">controller</span><span class="o">=</span><span class="s2">&quot;myCtrl&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;column&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;background-color:#aaa;&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">HW3</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">The</span> <span class="n">Spelling</span> <span class="n">Correction</span> <span class="n">Suggester</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="n">Brought</span> <span class="n">to</span> <span class="n">you</span> <span class="n">by</span> <span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">The</span> <span class="n">Grammar</span> <span class="n">Police</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="n">Our</span> <span class="n">Motto</span> <span class="ow">is</span><span class="p">,</span> <span class="s2">&quot;To correct and serve!&quot;</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;/images/badge.jpg&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;25%&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;column&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;background-color:#bbb;&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">So</span> <span class="n">you</span> <span class="n">think</span> <span class="n">you</span> <span class="n">can</span> <span class="n">spell</span><span class="err">?</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">h2</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: red;&quot;</span><span class="o">&gt;</span><span class="n">Game</span> <span class="n">On</span><span class="o">!</span>&lt;/h2&gt;
+                <span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+                <span class="n">Enter</span> <span class="n">a</span> <span class="n">word</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">input</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;width: 250px;&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="n">ng</span><span class="o">-</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;input_word&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;word&quot;</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">button</span> <span class="n">ng</span><span class="o">-</span><span class="n">show</span><span class="o">=</span><span class="s2">&quot;haveInput()&quot;</span> <span class="n">ng</span><span class="o">-</span><span class="n">click</span><span class="o">=</span><span class="s2">&quot;check()&quot;</span><span class="o">&gt;</span><span class="n">Check</span> <span class="n">Spelling</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">div</span> <span class="n">ng</span><span class="o">-</span><span class="n">show</span><span class="o">=</span><span class="s2">&quot;word_correct&quot;</span><span class="o">&gt;</span>
+                    <span class="n">The</span> <span class="n">word</span> <span class="ow">is</span> <span class="n">correctly</span> <span class="n">spelled</span><span class="o">.</span>
+                    <span class="o">&lt;</span><span class="n">button</span> <span class="n">ng</span><span class="o">-</span><span class="n">click</span><span class="o">=</span><span class="s2">&quot;reset_submission()&quot;</span><span class="o">&gt;</span><span class="n">OK</span> <span class="p">(</span><span class="n">Reset</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+                <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">div</span> <span class="n">ng</span><span class="o">-</span><span class="n">show</span><span class="o">=</span><span class="s2">&quot;haveAnswers&amp;&amp;!show_correction_rsp()&quot;</span><span class="o">&gt;</span>
+                    <span class="p">{{</span> <span class="n">correct_prompt</span> <span class="p">}}</span>
+                    <span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="n">div</span> <span class="n">ng</span><span class="o">-</span><span class="n">show</span><span class="o">=</span><span class="s2">&quot;!show_correction_rsp()&quot;</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="n">li</span> <span class="n">ng</span><span class="o">-</span><span class="n">repeat</span><span class="o">=</span><span class="s2">&quot;w in corrected_words&quot;</span> <span class="n">ng</span><span class="o">-</span><span class="n">click</span><span class="o">=</span><span class="s2">&quot;chose_word(w)&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">w</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+                        <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+                        <span class="n">Enter</span> <span class="n">your</span> <span class="n">own</span> <span class="n">correction</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">input</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;width: 250px;&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="n">ng</span><span class="o">-</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;correct_word&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;word&quot;</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">button</span> <span class="n">ng</span><span class="o">-</span><span class="n">click</span><span class="o">=</span><span class="s2">&quot;submit_correction()&quot;</span><span class="o">&gt;</span><span class="n">Send</span> <span class="n">Choice</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+                    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">div</span> <span class="n">ng</span><span class="o">-</span><span class="n">show</span><span class="o">=</span><span class="s2">&quot;show_correction_rsp()&amp;&amp;(!haveInput())&quot;</span><span class="o">&gt;</span>
+                    <span class="p">{{</span><span class="n">correction_response</span><span class="p">}}</span>
+                <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+                <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">button</span> <span class="n">onclick</span><span class="o">=</span><span class="s2">&quot;myFunction()&quot;</span><span class="o">&gt;</span><span class="n">What</span> <span class="n">does</span> <span class="n">this</span> <span class="n">button</span> <span class="n">do</span><span class="err">?</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;told_you_so&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;display:none;&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color:red;font-size: 32px;&quot;</span><span class="o">&gt;</span>
+                        <span class="n">Told</span> <span class="n">you</span> <span class="n">web</span> <span class="n">apps</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">textbook</span><span class="o">.</span>
+                    <span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+                <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+   <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>JavaScript Controller</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span> <span class="n">app</span> <span class="o">=</span> <span class="n">angular</span><span class="o">.</span><span class="n">module</span><span class="p">(</span><span class="s1">&#39;myApp&#39;</span><span class="p">,</span> <span class="p">[]);</span>
+<span class="n">app</span><span class="o">.</span><span class="n">controller</span><span class="p">(</span><span class="s1">&#39;myCtrl&#39;</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="err">$</span><span class="n">scope</span><span class="p">,</span> <span class="err">$</span><span class="n">http</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;loaded&quot;</span><span class="p">);</span>
+
+    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">input_word</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_prompt</span><span class="o">=</span><span class="s2">&quot;Enter your correction here.&quot;</span><span class="p">;</span>
+    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">word_correct</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">haveAnswers</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+
+    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">haveInput</span>    <span class="o">=</span>   <span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">input_word</span><span class="o">.</span><span class="n">length</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">reset_submission</span> <span class="o">=</span> <span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">word_correct</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+        <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">input_word</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">};</span>
+
+    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">check</span> <span class="o">=</span> <span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Word to check is  = &quot;</span><span class="p">,</span> <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">input_word</span><span class="p">)</span>
+
+        <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correction_response</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_word</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="err">$</span><span class="n">http</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:5000/api/check?word=&#39;</span> <span class="o">+</span> <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">input_word</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span>
+            <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;CORRECT&quot;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">word_correct</span><span class="o">=</span><span class="n">true</span><span class="p">;</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;The word is correct.&quot;</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">word_correct</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+                <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">haveAnswers</span><span class="o">=</span><span class="n">true</span><span class="p">;</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Possible words = &quot;</span> <span class="o">+</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+                <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">corrected_words</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">suggestions</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">corrected_words</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_prompt</span> <span class="o">=</span> <span class="s2">&quot;Click on a word to choose or enter your own correction.&quot;</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="p">{</span>
+                    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_prompt</span> <span class="o">=</span> <span class="s2">&quot;I got nothing. You can enter your own correction.&quot;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+
+    <span class="p">};</span>
+
+    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">chose_word</span>   <span class="o">=</span>   <span class="n">function</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;You chose &quot;</span> <span class="o">+</span> <span class="n">w</span><span class="p">);</span>
+        <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_word</span> <span class="o">=</span> <span class="n">w</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">corrected</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;You clicked &quot;</span> <span class="o">+</span> <span class="n">w</span><span class="p">);</span>
+        <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_word</span> <span class="o">=</span> <span class="n">w</span><span class="p">;</span>
+        <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_prompt</span><span class="o">=</span><span class="n">null</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">submit_correction</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">input_word</span> <span class="o">+</span> <span class="s2">&quot; CORRECTION TO &quot;</span> <span class="o">+</span> <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_word</span> <span class="o">+</span> <span class="s2">&quot; IS ON THE WAY.&quot;</span><span class="p">);</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">corrected_word</span> <span class="p">:</span> <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_word</span><span class="p">,</span>
+            <span class="n">original_word</span><span class="p">:</span> <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">input_word</span>
+        <span class="p">}</span>
+        <span class="err">$</span><span class="n">http</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;http://localhost:5000/api/correct&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span>
+            <span class="o">//</span><span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_prompt</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">msg</span><span class="p">;</span>
+            <span class="o">//</span><span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correct_word</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">msg</span><span class="p">;</span>
+            <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correction_response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">msg</span><span class="p">;</span>
+            <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">input_word</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">corrected_words</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">haveAnswers</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+            <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="err">$</span><span class="n">apply</span><span class="p">()</span>
+        <span class="p">});</span>
+    <span class="p">};</span>
+
+    <span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">show_correction_rsp</span>  <span class="o">=</span>   <span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">scope</span><span class="o">.</span><span class="n">correction_response</span> <span class="o">!==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Dude&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Object-and-Classes">Object and Classes<a class="anchor-link" href="#Object-and-Classes">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../images/bumpy.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h3><h4 id="Our-First-Objects/Classes">Our First Objects/Classes<a class="anchor-link" href="#Our-First-Objects/Classes">&#182;</a></h4><table>
+<thead><tr>
+<th style="text-align:center"><img src="../images/oo1.jpeg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Simple (UML) Class Diagram</strong></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Core OO model concepts<ul>
+<li>Class, Object</li>
+<li>Attribute</li>
+<li>Method</li>
+<li>Association</li>
+<li>(Interface)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Core concepts:<ul>
+<li>Abstraction</li>
+<li>Encapsulation</li>
+<li>Modularity</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base student class for a simulated university application&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uni</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>  <span class="c1"># initializer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span> <span class="o">=</span> <span class="n">last</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uni</span> <span class="o">=</span> <span class="n">uni</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">uni</span> <span class="o">+</span> <span class="s2">&quot;@columbia.edu&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># string representation, e.g. for printing</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">, ID:</span><span class="si">{}</span><span class="s2">, email:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span> \
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uni</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="c1"># Defines equality versus same instance</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">uni</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">uni</span>
+    
+    <span class="k">def</span> <span class="nf">get_full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span>
 </pre></div>
 
 </div>
@@ -12207,21 +12842,12 @@ The difference in the directory before/after are:  {&#39;instance_attribute&#39;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">MyColor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
-
-<span class="n">c2</span> <span class="o">=</span> <span class="n">MyColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
-
-<span class="n">c3</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c3</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c3</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;) - (&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;) = (&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c3</span><span class="o">-</span><span class="n">c1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c1 == (c3-c2) is &quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">c1</span> <span class="o">==</span> <span class="p">(</span><span class="n">c3</span><span class="o">-</span><span class="n">c2</span><span class="p">)))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;rmz1&quot;</span><span class="p">,</span> <span class="s2">&quot;Brown&quot;</span><span class="p">,</span> <span class="s2">&quot;Regina&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Our first person is = &quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">get_full_name</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12238,83 +12864,239 @@ The difference in the directory before/after are:  {&#39;instance_attribute&#39;
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Color: (&#39;red&#39;, 0, 0) = red
-Color: (0, &#39;green&#39;, 0) = green
-Color: (&#39;red&#39;, &#39;green&#39;, 0) = yellow
-(Color: (&#39;red&#39;, &#39;green&#39;, 0) = yellow) - (Color: (&#39;red&#39;, 0, 0) = red) = (Color: (0, &#39;green&#39;, 0) = green)
-c1 == (c3-c2) is  True
+<pre>Our first person is =  Regina Brown, ID:rmz1, email:rmz1@columbia.edu
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Homework-5:-Abstract-Types-and-Operators">Homework 5: Abstract Types and Operators<a class="anchor-link" href="#Homework-5:-Abstract-Types-and-Operators">&#182;</a></h3><p>"In mathematics, a group is an algebraic structure consisting of a set of elements equipped with an operation that combines any two elements to form a third element and that satisfies four conditions called the group axioms, namely closure, associativity, identity and invertibility.</p>
-<p>A group is a set, G, together with an operation • (called the group law of G) that combines any two elements a and b to form another element, denoted a • b or ab. To qualify as a group, the set and operation, (G, •), must satisfy four requirements known as the group axioms:</p>
-<ul>
-<li>Closure: For all a, b in G, the result of the operation, a • b, is also in G.b[›]</li>
-<li>Associativity: For all a, b and c in G, (a • b) • c = a • (b • c).</li>
-<li>Identity element: There exists an element e in G such that, for every element a in G, the equation e • a = a • e = a holds. Such an element is unique (see below), and thus one speaks of the identity element.</li>
-<li>Inverse element: For each a in G, there exists an element b in G, commonly denoted $a^{−1}$ (or −a, if the operation is denoted "+"), such that a • b = b • a = e, where e is the identity element.</li>
-</ul>
-<p>A group is called <em>finite</em> if it has a finite number of elements. The number of elements is called the order of the group."
-(<a href="https://en.wikipedia.org/wiki/Group_(mathematics)#Finite_groups">https://en.wikipedia.org/wiki/Group_(mathematics)#Finite_groups</a>)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>"A Cayley table, after the 19th century British mathematician Arthur Cayley, describes the structure of a finite group by arranging all the possible products of all the group's elements in a square table reminiscent of an addition or multiplication table." (<a href="https://en.wikipedia.org/wiki/Cayley_table">https://en.wikipedia.org/wiki/Cayley_table</a>)</p>
-<p>A common example of a finite group is <em>modular arithmetic.</em> For modulo-5,</p>
-<ul>
-<li>The symbols group elements are $ G = \{0, 1, 2, 3, 4\}$</li>
-<li>If $a,b \in G,$ and $+$ is normal integer addition. <ul>
-<li>$a \bullet b = a + b,$ if  $(a+b) \lt 5.$</li>
-<li>$a \bullet b = a + b - 5,$ if  $(a+b) \ge 5.$</li>
-</ul>
-</li>
-<li><code>%</code> is the Python operator for modular arithmetic.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span><span class="o">%</span><span class="k">5</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+<div class="prompt output_prompt">Out[52]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
+<pre>&#39;Regina Brown&#39;</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Faculty</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Faculty, which extends person.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uni</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dept</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>  <span class="c1"># initializer</span>
+        <span class="n">Person</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uni</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">first</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dept</span> <span class="o">=</span> <span class="n">dept</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># string representation, e.g. for printing</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="s2">&quot;dept: </span><span class="si">{}</span><span class="s2">, title:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dept</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">p1</span> <span class="o">+</span> <span class="s2">&quot; ,&quot;</span> <span class="o">+</span> <span class="n">p2</span>
+
+    <span class="k">def</span> <span class="nf">is_good_teacher</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">uni</span> <span class="o">==</span> <span class="s2">&quot;dff9&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Seriously dude? I mean really?&quot;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">uni</span> <span class="o">==</span> <span class="s2">&quot;jbh2019&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Definitely! What do you think a professor would say about the dept. chair?&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Possible. Take the class.&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Person</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Faculty</span><span class="p">(</span><span class="s2">&quot;dff9&quot;</span><span class="p">,</span> <span class="s2">&quot;Ferguson&quot;</span><span class="p">,</span> <span class="s2">&quot;Donald&quot;</span><span class="p">,</span> <span class="s2">&quot;Professor of Practice&quot;</span><span class="p">,</span> <span class="s2">&quot;Department of Computer Science&quot;</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">Faculty</span><span class="p">(</span><span class="s2">&quot;jbh2019&quot;</span><span class="p">,</span> <span class="s2">&quot;Hirschberg&quot;</span><span class="p">,</span> <span class="s2">&quot;Julia&quot;</span><span class="p">,</span> <span class="s2">&quot;Professor and Chair&quot;</span><span class="p">,</span> <span class="s2">&quot;Department of Computer Science&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f1 = &quot;</span><span class="p">,</span> <span class="n">f1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f2 = &quot;</span><span class="p">,</span> <span class="n">f2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>f1 =  Donald Ferguson, ID:dff9, email:dff9@columbia.edu ,dept: Department of Computer Science, title:Professor of Practice
+f2 =  Julia Hirschberg, ID:jbh2019, email:jbh2019@columbia.edu ,dept: Department of Computer Science, title:Professor and Chair
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Is good teacher -- &quot;</span><span class="p">,</span> <span class="n">f1</span><span class="o">.</span><span class="n">uni</span><span class="p">,</span> <span class="s2">&quot;Answer is &quot;</span><span class="p">,</span> <span class="n">f1</span><span class="o">.</span><span class="n">is_good_teacher</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Is good teacher -- &quot;</span><span class="p">,</span> <span class="n">f2</span><span class="o">.</span><span class="n">uni</span><span class="p">,</span> <span class="s2">&quot;Answer is &quot;</span><span class="p">,</span> <span class="n">f2</span><span class="o">.</span><span class="n">is_good_teacher</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Is good teacher --  dff9 Answer is  Seriously dude? I mean really?
+Is good teacher --  jbh2019 Answer is  Definitely! What do you think a professor would say about the dept. chair?
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Faculty, which extends person.&quot;&quot;&quot;</span>
+
+    <span class="n">__valid_years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">2022</span><span class="p">]</span>
+    <span class="n">__valid_school_codes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CC&#39;</span><span class="p">,</span> <span class="s1">&#39;BA&#39;</span><span class="p">,</span> <span class="s1">&#39;GS&#39;</span><span class="p">,</span> <span class="s1">&#39;SEAS&#39;</span><span class="p">,</span> <span class="s1">&#39;SIPA&#39;</span><span class="p">,</span> <span class="s1">&#39;GSAS&#39;</span><span class="p">,</span> <span class="s1">&#39;CUMC&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uni</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">school</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>  <span class="c1"># initializer</span>
+
+        <span class="n">m</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">year</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__valid_years</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="n">year</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__valid_years</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="s2">&quot;Invalid years - must be in range: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__valid_years</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">school</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__valid_school_codes</span><span class="p">:</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="s2">&quot;Invalid school code: valid values are: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__valid_school_codes</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">school</span> <span class="o">=</span> <span class="n">school</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+            <span class="n">Person</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uni</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">first</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># string representation, e.g. for printing</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="s2">&quot;school code: </span><span class="si">{}</span><span class="s2">, year:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">school</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">p1</span> <span class="o">+</span> <span class="s2">&quot; ,&quot;</span> <span class="o">+</span> <span class="n">p2</span>
+
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Person</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;js1234&quot;</span><span class="p">,</span> <span class="s2">&quot;Smith&quot;</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="s2">&quot;CC&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;s1 = &quot;</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>s1 =  John Smith, ID:js1234, email:js1234@columbia.edu ,school code: CC, year:2021
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;jb1111&quot;</span><span class="p">,</span> <span class="s2">&quot;Burke&quot;</span><span class="p">,</span> <span class="s2">&quot;James&quot;</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="s2">&quot;XX&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;s2 = &quot;</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">ve</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Boom = &quot;</span><span class="p">,</span> <span class="n">ve</span><span class="p">)</span>
+    
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;s2 = &quot;</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">NameError</span> <span class="k">as</span> <span class="n">ne</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ne</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Boom =  Invalid school code: valid values are: [&#39;CC&#39;, &#39;BA&#39;, &#39;GS&#39;, &#39;SEAS&#39;, &#39;SIPA&#39;, &#39;GSAS&#39;, &#39;CUMC&#39;]
+name &#39;s2&#39; is not defined
+</pre>
+</div>
 </div>
 
 </div>
@@ -12325,20 +13107,349 @@ c1 == (c3-c2) is  True
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>The Cayley Table for the set is:</li>
+<h4 id="Discussion:-Inheritance,-isinstance(),-issubclass()">Discussion: Inheritance, isinstance(), issubclass()<a class="anchor-link" href="#Discussion:-Inheritance,-isinstance(),-issubclass()">&#182;</a></h4><ul>
+<li>"What is this Is_A" and inheritance of which you speak?</li>
 </ul>
-<table>
-<thead><tr>
-<th style="text-align:center"><img src="../images/cayley5.jpeg"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>Cayley Table for Addition Mod 5</strong></td>
-</tr>
-</tbody>
-</table>
+<p>"In object-oriented programming, inheritance is when an object or class is based on another object (... ...) or class (class-based inheritance), using the same implementation. Inheritance in most class-based object-oriented languages is a mechanism in which one object acquires all the properties and behaviours of the parent object. Inheritance allows programmers to: create classes that are built upon existing classes,[1] to specify a new implementation to maintain the same behaviour (realizing an interface), to reuse code and to independently extend original software via public classes and interfaces. The relationships of objects or classes through inheritance give rise to a directed graph.</p>
+<p>An inherited class is called a subclass of its parent class or super class."<br>
+<a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming">https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming</a>)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f1 = &quot;</span><span class="p">,</span> <span class="n">f1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f2 = &quot;</span><span class="p">,</span> <span class="n">f2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;s1 = &quot;</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p1 = &quot;</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>f1 =  Donald Ferguson, ID:dff9, email:dff9@columbia.edu ,dept: Department of Computer Science, title:Professor of Practice
+f2 =  Julia Hirschberg, ID:jbh2019, email:jbh2019@columbia.edu ,dept: Department of Computer Science, title:Professor and Chair
+s1 =  John Smith, ID:js1234, email:js1234@columbia.edu ,school code: CC, year:2021
+p1 =  Regina Brown, ID:rmz1, email:rmz1@columbia.edu
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">Person</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p1 is a Person&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">Student</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p1 is a student&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p1 is not a student&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>p1 is a Person
+p1 is not a student
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">Person</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;s1 is a Person&quot;</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">Student</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;s1 is a student&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;s1 is not a student&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>s1 is a Person
+s1 is a student
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">Person</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f1 is a Person&quot;</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">Student</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f1 is a student&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f1 is not a student&quot;</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">Faculty</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f1 is a Faculty&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f1 is not a Faculty&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>f1 is a Person
+f1 is not a student
+f1 is a Faculty
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>This show the Is_A relationship for the classes.</li>
+</ul>
+<ul>
+<li>A couple more examples.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;issubclass(Faculty, Person) = &quot;</span><span class="p">,</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">Faculty</span><span class="p">,</span> <span class="n">Person</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;issubclass(type(f1), type(p1)) = &quot;</span><span class="p">,</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f1</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">p1</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">p1</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>issubclass(Faculty, Person) =  True
+issubclass(type(f1), type(p1)) =  True
+&lt;class &#39;__main__.Faculty&#39;&gt;
+&lt;class &#39;__main__.Person&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Discussion:-Inheritance-of-Implementation">Discussion: Inheritance of Implementation<a class="anchor-link" href="#Discussion:-Inheritance-of-Implementation">&#182;</a></h4><ul>
+<li>Note:<ul>
+<li>Person has a method get_full_name() and attributes first_name and last_name.</li>
+<li>Faculty and Student do not explicitly have the method or the attributes.</li>
+<li>Faculty and Student <strong>inherit</strong> the attributes and method.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1</span><span class="o">.</span><span class="n">get_full_name</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[65]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Donald Ferguson&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1</span><span class="o">.</span><span class="n">first_name</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[66]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Donald&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s1</span><span class="o">.</span><span class="n">get_full_name</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[67]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;John Smith&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="From-the-Textbook">From the Textbook<a class="anchor-link" href="#From-the-Textbook">&#182;</a></h3><p><img src="../images/chapter11/Slide04.jpg">
+<img src="../images/chapter11/Slide05.jpg">
+<img src="../images/chapter11/Slide06.jpg">
+<img src="../images/chapter11/Slide07.jpg">
+<img src="../images/chapter11/Slide08.jpg">
+<img src="../images/chapter11/Slide09.jpg">
+<img src="../images/chapter11/Slide10.jpg"></p>
 
 </div>
 </div>
@@ -12347,237 +13458,555 @@ c1 == (c3-c2) is  True
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>HW 5: Part 1</strong></p>
+<p><img src="../images/chapter11/Slide11.jpg">
+<img src="../images/chapter11/Slide12.jpg">
+<img src="../images/chapter11/Slide13.jpg">
+<img src="../images/chapter11/Slide14.jpg">
+<img src="../images/chapter11/Slide15.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../images/chapter11/Slide17.jpg">
+<img src="../images/chapter11/Slide18.jpg">
+<img src="../images/chapter11/Slide19.jpg">
+<img src="../images/chapter11/Slide20.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../images/chapter11/Slide21.jpg">
+<img src="../images/chapter11/Slide22.jpg">
+<img src="../images/chapter11/Slide23.jpg">
+<img src="../images/chapter11/Slide24.jpg">
+<img src="../images/chapter11/Slide25.jpg">
+<img src="../images/chapter11/Slide26.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Instance-and-Equality">Instance and Equality<a class="anchor-link" href="#Instance-and-Equality">&#182;</a></h3><ul>
+<li>There is a difference between being<ul>
+<li>The same instance.</li>
+<li>Equal, from an application perspective.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Faculty</span><span class="p">(</span><span class="s2">&quot;dff9&quot;</span><span class="p">,</span> <span class="s2">&quot;Ferguson&quot;</span><span class="p">,</span> <span class="s2">&quot;Donald&quot;</span><span class="p">,</span> <span class="s2">&quot;Comp. Sci.&quot;</span><span class="p">,</span> <span class="s2">&quot;Professor of Practice&quot;</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">Faculty</span><span class="p">(</span><span class="s2">&quot;dff9&quot;</span><span class="p">,</span> <span class="s2">&quot;Ferguson&quot;</span><span class="p">,</span> <span class="s2">&quot;Donald&quot;</span><span class="p">,</span> <span class="s2">&quot;Comp. Sci.&quot;</span><span class="p">,</span> <span class="s2">&quot;Professor of Practice&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">f1</span> <span class="o">==</span> <span class="n">f2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;They are equal.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;They are not equal.&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>They are equal.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Implement a class" <code>BaseCayleyGroup.</code><ul>
-<li>The class supports the operations <code>==</code> and <code>*.</code></li>
-<li>The <strong>init</strong> method prevents an instance of this class from being directly created.</li>
+<li>The objects are two different <em>instances</em> that happen to have the same data.</li>
+</ul>
+<ul>
+<li>The application may <em>redefine equality</em> to implement correct semantics.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1</span> <span class="ow">is</span> <span class="n">f2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[39]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1</span> <span class="ow">is</span> <span class="n">f1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[40]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">f2</span>
+<span class="n">x</span> <span class="ow">is</span> <span class="n">f2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[41]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(x) = &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(f1) = &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">f1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(f2) = &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">f2</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>id(x) =  4404153984
+id(f1) =  4404153928
+id(f2) =  4404153984
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[44]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4360218672</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[45]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4359837600</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[46]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="ow">is</span> <span class="kc">True</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>==</code> and <code>is</code><ul>
+<li><code>==</code> tests if the two objects are effectively the same value from an application's perspective. Are they equivalent, even if not the same instance.</li>
+<li><code>is</code> tests if the two objects are the same <em>instance.</em></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li>You will implement two subclasses:<ul>
-<li>CayleyMod5, which is the modular arithmetic class above. Remember, the algebraic operator is <code>*</code> but the implementation is modular addition. </li>
-<li>CayleyOneAndI, which is multiplication on the set $\{1, i, -1, -i\}.$ The Cayley Table is below.</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead><tr>
-<th style="text-align:center"><img src="../images/CayleyOneAndI.jpeg"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>Cayley Table for 1,-1,i,-i</strong></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>The two subclasses will <strong>inherit</strong> the implementation of <code>==</code> and <code>*</code> from <code>BaseCayleyGroup.</code> </li>
-</ul>
-<ul>
-<li>The subclasses <code>CayleyMod5</code> and <code>CayleyOneAndI</code> will define the Cayley Table and valid symbols.</li>
-</ul>
-<ul>
-<li><strong>Note:</strong> There is a slightly better way to handle the "abstractness" of <code>BaseCayleyGroup</code> but we have not yet covered the material.</li>
+<li>How can you get two different object instances with data this is effectively the same? Surprisingly many ways.</li>
 </ul>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[70]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4343799064</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>x =  2
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[74]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4384173896</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[75]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="ow">is</span> <span class="s2">&quot;2&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[76]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>class CayleyMod5(BaseCayleyGroup):
-
-    __symbols = {0, 1, 2, 3, 4}
-    __table = None
-
-    def __init__(self, v):
-        value = v % 5
-        BaseCayleyGroup.__init__(self, value)
-
-        if CayleyMod5.__table is None:
-            symbols = CayleyMod5.__symbols
-            temp = [(k, v) for k in symbols for v in symbols]
-            CayleyMod5.__table = dict({((i, j), (i + j) % 5) for i, j in temp})
-            BaseCayleyGroup.__init__(self, value)
-
-    @classmethod
-    def get_cayley_table(cls):
-        return CayleyMod5.__table
-
-
-class CayleyOneAndI(BaseCayleyGroup):
-
-    __symbols = {1+0j, -1-0j, 0+1j, -0-1j}
-    __table = None
-
-    def __init__(self, v):
-        value = v
-
-        if CayleyOneAndI.__table is None:
-            temp = [(k, v) for k in CayleyOneAndI.__symbols for v in CayleyOneAndI.__symbols]
-            CayleyOneAndI.__table = dict({((i, j), i*j) for i, j in temp})
-
-        BaseCayleyGroup.__init__(self, value)
-
-
-    @classmethod
-    def get_cayley_table(cls):
-        return CayleyOneAndI.__table</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>f1 = CayleyMod5(2)
-f2 = CayleyMod5(3)
-f3 = CayleyMod5(11)
-
-
-print(f1 * f2)
-print(f3)
-print(f3 * f2)
-
-x = CayleyOneAndI(-1-0j)
-y = CayleyOneAndI(-1-0j)
-print(x*y)
-z = CayleyOneAndI(0+1j)
-print(x*z)
-print(z*z)</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="H5-Part-2:--Abstract-Matrix">H5 Part 2:  Abstract Matrix<a class="anchor-link" href="#H5-Part-2:--Abstract-Matrix">&#182;</a></h4><p>"In mathematics, a matrix (plural: matrices) is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns.</p>
-<p>... ...</p>
-<p>The sum A+B of two m-by-n matrices A and B is calculated entrywise: <br>
-$(A + B)_{i,j} = A_{i,j} + B_{i,j},$ where $1 ≤ i ≤ m$ and $1 ≤ j ≤ n.$" <br>
-(<a href="https://en.wikipedia.org/wiki/Matrix_(mathematics">https://en.wikipedia.org/wiki/Matrix_(mathematics</a>))</p>
-<p>Two matrices are <em>equal</em> if <br>
-$A_{ij} == B_{ij}, \forall i,j$ where $1 ≤ i ≤ m$ and $1 ≤ j ≤ n.$" <br></p>
-<p>Implement two classes:</p>
 <ul>
-<li>BaseMatrix, which stores the elements in an array.</li>
-<li><p>SparseMatrix, which only stores the non-empty/non-zero values in a dictionary.</p>
-</li>
-<li><p>The BaseMatrix must implement</p>
-<ul>
-<li>A constructor that takes a type, and the matrix sizes.</li>
-<li><code>get(i,j),</code> which returns the <code>i,j</code> value.</li>
-<li><code>set(i,j,v),</code> which sets the <code>i,j</code></li>
-<li><code>==</code> if the two matrices are equal.</li>
-<li><code>+</code> that adds the two matrices.</li>
+<li>This is a trivial example, but the issue occurs frequently in more complex applications.</li>
 </ul>
-</li>
-<li><p>SparseMatrix must ONLY implement <code>get()</code> and <code>set().</code> All other functions must come from BaseMatrix.</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Sample Execution:</p>
-
-<pre><code>tt = MySparseMatrix(int, 2, 2)
-tt.set(0,0,11)
-tt.set(0,1,11)
-tt.set(1,0,11)
-print(tt)
-
-t1 = MyMatrix(int, 2, 2)
-t1.set(0,1,-11)
-t1.set(1,1,11)
-print(t1)
-
-t3 = MyMatrix(float, 3, 3)
-t4 = MyMatrix(float, 3,3)
-print(t3 == t4)
-
-
-print(tt + t1)
-
-t3 = MyMatrix(float, 3, 3)
-t4 = MySparseMatrix(float, 3,3)
-print(t3 == t4)
-print(t3 is t4)
-
-t3.set(0,0,3.4)
-t3.set(1,1,4.0)
-print(t3)
-
-t4.set(1,1,11.0)
-print(t3+t4)</code></pre>
-<p>produces</p>
-
-<pre><code>2 X 2 matrix of type &lt;class 'int'&gt;:
-11,11
-11,0
-
-2 X 2 matrix of type &lt;class 'int'&gt;:
-0,0
--11,11
-
-True
-2 X 2 matrix of type &lt;class 'int'&gt;:
-11,0
-11,11
-
-True
-False
-3 X 3 matrix of type &lt;class 'float'&gt;:
-3.4,0.0,0.0
-0.0,4.0,0.0
-0.0,0.0,0.0
-
-3 X 3 matrix of type &lt;class 'float'&gt;:
-3.4,0.0,0.0
-0.0,15.0,0.0
-0.0,0.0,0.0</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="HW5-Summary">HW5 Summary<a class="anchor-link" href="#HW5-Summary">&#182;</a></h4><ul>
-<li>I will post the code from lecture, test cases and execution on Piazza.</li>
-</ul>
-<ul>
-<li>Will be due 19-Apr-2018.</li>
-</ul>
-<ul>
-<li>If you THINK, this is a very, very short homework.<ul>
-<li>My <code>BaseCayleyClass</code> is only 8 statements. There is one 4 statement method and 4 one statement methods.</li>
-<li>My <code>MyMatrix</code> and <code>MySparseMatrix</code> combined is less then 35 statements.</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>This assignment is an examplar of teaching you to apply computing versus learning Python in an online course.</li>
-</ul>
-<ul>
-<li>Also, Bwah Hah Hah!</li>
-</ul>
-<p><img src="../images/mindblown.jpeg"></p>
 
 </div>
 </div>

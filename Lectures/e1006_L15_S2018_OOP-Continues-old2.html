@@ -12379,9 +12379,6 @@ c1 == (c3-c2) is  True
 <ul>
 <li>The subclasses <code>CayleyMod5</code> and <code>CayleyOneAndI</code> will define the Cayley Table and valid symbols.</li>
 </ul>
-<ul>
-<li><strong>Note:</strong> There is a slightly better way to handle the "abstractness" of <code>BaseCayleyGroup</code> but we have not yet covered the material.</li>
-</ul>
 
 </div>
 </div>
@@ -12393,42 +12390,22 @@ c1 == (c3-c2) is  True
 
 <pre><code>class CayleyMod5(BaseCayleyGroup):
 
-    __symbols = {0, 1, 2, 3, 4}
-    __table = None
-
     def __init__(self, v):
         value = v % 5
-        BaseCayleyGroup.__init__(self, value)
-
-        if CayleyMod5.__table is None:
-            symbols = CayleyMod5.__symbols
-            temp = [(k, v) for k in symbols for v in symbols]
-            CayleyMod5.__table = dict({((i, j), (i + j) % 5) for i, j in temp})
-            BaseCayleyGroup.__init__(self, value)
-
-    @classmethod
-    def get_cayley_table(cls):
-        return CayleyMod5.__table
+        symbols = {0, 1, 2, 3, 4}
+        temp = [(k, v) for k in symbols for v in symbols]
+        table = dict({(str(i) + "*" + str(j), (i+j)%5) for i,j in temp})
+        BaseCayleyGroup.__init__(self, value, symbols, table)
 
 
 class CayleyOneAndI(BaseCayleyGroup):
 
-    __symbols = {1+0j, -1-0j, 0+1j, -0-1j}
-    __table = None
-
     def __init__(self, v):
         value = v
-
-        if CayleyOneAndI.__table is None:
-            temp = [(k, v) for k in CayleyOneAndI.__symbols for v in CayleyOneAndI.__symbols]
-            CayleyOneAndI.__table = dict({((i, j), i*j) for i, j in temp})
-
-        BaseCayleyGroup.__init__(self, value)
-
-
-    @classmethod
-    def get_cayley_table(cls):
-        return CayleyOneAndI.__table</code></pre>
+        symbols = {1+0j, -1-0j, 0+1j, -0-1j}
+        temp = [(k, v) for k in symbols for v in symbols]
+        table = dict({(str(i) + "*" + str(j), i*j) for i, j in temp})
+        BaseCayleyGroup.__init__(self, value, symbols, table)</code></pre>
 
 </div>
 </div>
@@ -12550,34 +12527,6 @@ False
 3.4,0.0,0.0
 0.0,15.0,0.0
 0.0,0.0,0.0</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="HW5-Summary">HW5 Summary<a class="anchor-link" href="#HW5-Summary">&#182;</a></h4><ul>
-<li>I will post the code from lecture, test cases and execution on Piazza.</li>
-</ul>
-<ul>
-<li>Will be due 19-Apr-2018.</li>
-</ul>
-<ul>
-<li>If you THINK, this is a very, very short homework.<ul>
-<li>My <code>BaseCayleyClass</code> is only 8 statements. There is one 4 statement method and 4 one statement methods.</li>
-<li>My <code>MyMatrix</code> and <code>MySparseMatrix</code> combined is less then 35 statements.</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>This assignment is an examplar of teaching you to apply computing versus learning Python in an online course.</li>
-</ul>
-<ul>
-<li>Also, Bwah Hah Hah!</li>
-</ul>
-<p><img src="../images/mindblown.jpeg"></p>
 
 </div>
 </div>
