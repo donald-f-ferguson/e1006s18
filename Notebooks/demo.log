@@ -1,0 +1,22 @@
+2018-04-11 16:00:44,532 - e1006_application - DEBUG - ***** Starting a test run *******
+2018-04-11 16:00:44,532 - e1006_application - INFO - Creating an info message.
+2018-04-11 16:00:44,532 - e1006_application - DEBUG - Creating a debug message
+2018-04-11 16:00:44,533 - e1006_application - WARNING - Creating a warning message.
+2018-04-11 16:00:44,533 - e1006_application - ERROR - Creating an ERROR message.
+2018-04-11 16:01:03,534 - e1006_application - DEBUG - ***** Starting a test run *******
+2018-04-11 16:01:03,534 - e1006_application - INFO - Creating an info message.
+2018-04-11 16:01:03,535 - e1006_application - DEBUG - Creating a debug message
+2018-04-11 16:01:03,535 - e1006_application - WARNING - Creating a warning message.
+2018-04-11 16:01:03,535 - e1006_application - ERROR - Creating an ERROR message.
+2018-04-11 16:01:48,560 - e1006_application - DEBUG - ***** Starting a test run *******
+2018-04-11 16:01:48,560 - e1006_application - INFO - Creating an info message.
+2018-04-11 16:01:48,561 - e1006_application - DEBUG - Creating a debug message
+2018-04-11 16:01:48,561 - e1006_application - WARNING - Creating a warning message.
+2018-04-11 16:01:48,561 - e1006_application - ERROR - Creating an ERROR message.
+2018-04-11 16:01:48,562 - e1006_application - ERROR - Creating another ERROR message.!
+2018-04-11 16:05:14,866 - e1006_application - DEBUG - ***** Starting a test run *******
+2018-04-11 16:05:14,866 - e1006_application - INFO - Creating an info message.
+2018-04-11 16:05:14,867 - e1006_application - DEBUG - Creating a debug message
+2018-04-11 16:05:14,867 - e1006_application - WARNING - Creating a warning message.
+2018-04-11 16:05:14,868 - e1006_application - ERROR - Creating an ERROR message.
+2018-04-11 16:05:14,869 - e1006_application - ERROR - Creating another ERROR message.!

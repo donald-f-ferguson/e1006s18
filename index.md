@@ -71,7 +71,8 @@ viewing the HTML lectures are:
     - [Lecture 15: HW3 Solution](./Lectures/e1006_L13_S2018_HW3_Iter_HW4.html)
     - [lecture 16: Web App, OOP](./Lectures/e1006_L14_S2018_OOP.html)
     - [lecture 17: OOP Continues](./Lectures/e1006_L15_S2018_OOP-Continues.html)
-    - [lecture 18: OOP Continues](./Lectures/e1006_L16_S2018_OOP-Continues.html)
+    - [lecture 18: OOP Continues](./Lectures/e1006_L16_S2018_OOP-Continues/e1006_L16_S2018_OOP-Continues.html)
+    - [lecture 19: OOP Continues](./Lectures/e1006_L17_S2018_OOP-OO-Apps-Cont/e1006_L17_S2018_OOP-OO-Apps-Cont.html)
 1. [CodeSamples](./CodeSamples) contains the same programs from lectures.
 1. [Data](./Data) contains SQL, CSV and other data files used in projects.
 1. [Notebooks](./Notebooks) contains the [Jupyter](http://jupyter.org/) Notebooks used
