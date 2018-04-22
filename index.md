@@ -72,8 +72,7 @@ viewing the HTML lectures are:
     - [lecture 16: Web App, OOP](./Lectures/e1006_L14_S2018_OOP.html)
     - [lecture 17: OOP Continues](./Lectures/e1006_L15_S2018_OOP-Continues.html)
     - [lecture 18: OOP Continues](./Lectures/e1006_L16_S2018_OOP-Continues/e1006_L16_S2018_OOP-Continues.html)
-    - [lecture 19: Finishing OOP -- Pandas](./Lectures/e1006_L19_S2018_OOP-Final-Pandas/e1006_L19_S2018_OOP-Final-Pandas.html)
-    - [Lecture 20:
+    - [lecture 19: Finishing OOP -- Pandas](./Lectures/e1006_L19_S2018_OOP-Final-Pandas.html)
 1. [CodeSamples](./CodeSamples) contains the same programs from lectures.
 1. [Data](./Data) contains SQL, CSV and other data files used in projects.
 1. [Notebooks](./Notebooks) contains the [Jupyter](http://jupyter.org/) Notebooks used
